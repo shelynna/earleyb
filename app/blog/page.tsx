@@ -81,9 +81,6 @@ export default function BlogPage() {
                   </div>
 
                   <div className="p-8 flex-grow">
-                    <span className="inline-block px-3 py-1 rounded-full bg-gray-50 text-gray-600 text-[10px] font-bold uppercase tracking-widest mb-4">
-                      {post.category}
-                    </span>
                     <h2 className="text-xl font-bold text-black mb-3 leading-snug group-hover:text-blue-600 transition-colors">
                       {post.title}
                     </h2>

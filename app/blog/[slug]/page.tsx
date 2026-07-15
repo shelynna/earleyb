@@ -41,9 +41,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <article className="pt-8 px-4 md:px-10 max-w-[1000px] mx-auto">
           <header className="text-center pb-12">
-            <span className="inline-block px-3 py-1 rounded-full bg-white text-gray-600 text-[10px] font-bold uppercase tracking-widest mb-5">
-              {post.category}
-            </span>
             <h1 className="text-[40px] md:text-[64px] font-bold leading-[1.1] tracking-tighter text-balance mx-auto max-w-4xl mb-6 text-black">
               {post.title}
             </h1>

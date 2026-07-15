@@ -32,8 +32,7 @@ export default function BusinessPortfolio() {
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
               <div className="h-64 bg-gradient-to-tr from-indigo-900 to-indigo-700 w-full relative flex items-center justify-center p-8">
                 <div className="text-center text-white relative z-10">
-                  <span className="bg-indigo-500/30 text-indigo-300 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Web Design &amp; SEO</span>
-                  <h3 className="text-3xl font-black mt-4">Oakridge Medical Clinic</h3>
+                  <h3 className="text-3xl font-black">Oakridge Medical Clinic</h3>
                   <p className="text-indigo-200 mt-2 text-sm font-medium">Responsive Web Portal + Local SEO Optimization</p>
                 </div>
               </div>
@@ -65,8 +64,7 @@ export default function BusinessPortfolio() {
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
               <div className="h-64 bg-gradient-to-tr from-slate-900 to-slate-800 w-full relative flex items-center justify-center p-8">
                 <div className="text-center text-white relative z-10">
-                  <span className="bg-slate-700/50 text-slate-300 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Managed IT (MSP)</span>
-                  <h3 className="text-3xl font-black mt-4">Pinnacle Law Firm</h3>
+                  <h3 className="text-3xl font-black">Pinnacle Law Firm</h3>
                   <p className="text-slate-300 mt-2 text-sm font-medium">Robust Internal Network + Cloud Disaster Recovery</p>
                 </div>
               </div>
@@ -98,8 +96,7 @@ export default function BusinessPortfolio() {
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
               <div className="h-64 bg-gradient-to-tr from-teal-900 to-teal-700 w-full relative flex items-center justify-center p-8">
                 <div className="text-center text-white relative z-10">
-                  <span className="bg-teal-500/30 text-teal-300 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">SEO Campaign</span>
-                  <h3 className="text-3xl font-black mt-4">Apex Contracting Co.</h3>
+                  <h3 className="text-3xl font-black">Apex Contracting Co.</h3>
                   <p className="text-teal-200 mt-2 text-sm font-medium">B2B Lead Generation & Keyword Dominance</p>
                 </div>
               </div>
@@ -131,8 +128,7 @@ export default function BusinessPortfolio() {
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
               <div className="h-64 bg-gradient-to-tr from-orange-950 to-orange-900 w-full relative flex items-center justify-center p-8">
                 <div className="text-center text-white relative z-10">
-                  <span className="bg-orange-500/30 text-orange-300 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">SaaS Integration</span>
-                  <h3 className="text-3xl font-black mt-4">Vanguard Logistical</h3>
+                  <h3 className="text-3xl font-black">Vanguard Logistical</h3>
                   <p className="text-orange-200 mt-2 text-sm font-medium">CRM Setup & Workflow Automation</p>
                 </div>
               </div>

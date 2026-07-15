@@ -360,9 +360,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
         <section className="pt-8 pb-12 px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="max-w-4xl space-y-6">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black text-white text-[10px] font-black uppercase tracking-widest">
-              {service.category} Solution
-            </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-black leading-tight">
               {service.title}
             </h1>
@@ -410,13 +407,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
               <div className="bg-white p-8 md:p-10 rounded-[32px] space-y-6">
                 <h2 className="text-xl font-bold text-black">Service Focus</h2>
-                <div className="flex flex-wrap gap-2">
+                <ul className="space-y-2 list-disc pl-5">
                   {service.features.map((feature) => (
-                    <span key={feature} className="bg-gray-50 text-gray-700 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider">
+                    <li key={feature} className="text-sm font-medium text-gray-600">
                       {feature}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
                 <div className="flex flex-col gap-3 pt-2">
                   <Link href="/book" className="bg-black text-white font-bold rounded-xl py-3.5 text-xs uppercase tracking-widest hover:bg-black/80 transition-colors shadow-md text-center">
                     {service.primaryCta}

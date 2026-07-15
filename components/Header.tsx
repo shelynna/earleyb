@@ -123,7 +123,7 @@ export function Header() {
 
           </nav>
         </div>
-        <Link href="/book" className="bg-white-soft text-black rounded-full hover:bg-white transition-colors duration-300 shrink-0 flex items-center px-8 text-[10px] h-[56px] font-bold uppercase tracking-widest cursor-pointer">
+        <Link href="/book" className="bg-[#155e75] text-white rounded-full hover:bg-[#0f4f63] transition-colors duration-300 shrink-0 flex items-center px-8 text-[10px] h-[56px] font-bold uppercase tracking-widest cursor-pointer">
           Book Consult
         </Link>
       </div>

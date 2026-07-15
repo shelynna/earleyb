@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page-bg: #FFFFFF;
+  --color-panel-bg: #F7F7F4;
+  --color-soft-card: #F1F1EE;
+  --color-soft-card-2: #FAFAF8;
+  --color-text: #191919;
+  --color-muted: #8B877F;
+  --color-muted-light: #BCB8AF;
+  --color-line: #D6D3CB;
+  --color-black: #171717;
+  --color-deep-black: #151515;
+  --color-white-card: #FFFFFF;
+  --color-white-soft: #FFFFFF;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 50px)); }
+}
+
+body {
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+[class*="bg-[#FAFAFA]"] {
+  background-color: var(--color-page-bg) !important;
+}
+
+[class*="bg-gradient-to-"] {
+  background-image: none !important;
+  background-color: var(--color-panel-bg) !important;
+}
+
+[class*="bg-gradient-to-t"] {
+  background-color: rgb(0 0 0 / 0.26) !important;
+}
+
+[class*="from-slate-900"],
+[class*="from-teal-900"],
+[class*="from-blue-900"],
+[class*="from-orange-950"],
+[class*="to-black"],
+[class*="to-slate-800"],
+[class*="to-blue-900"],
+[class*="to-orange-900"] {
+  background-color: var(--color-black) !important;
+}
+
+[class*="text-transparent"][class*="bg-clip-text"] {
+  background-image: none !important;
+  color: var(--color-text) !important;
+}
+
+[class*="shadow"] {
+  box-shadow: 0 1px 2px rgb(25 25 25 / 0.03) !important;
+}
+
+header [class*="shadow"],
+footer [class*="shadow"] {
+  box-shadow: none !important;
+}
+
+[class*="border-gray"],
+[class*="border-line"],
+[class*="border-white"],
+[class*="border-blue"],
+[class*="border-indigo"],
+[class*="border-red"],
+[class*="border-green"],
+[class*="border-teal"],
+[class*="border-amber"],
+[class*="border-orange"],
+[class*="border-purple"],
+[class*="border-slate"] {
+  border-color: rgb(214 211 203 / 0.55) !important;
+}
+
+[class*="border-l-4"],
+[class*="border-[2px]"],
+[class*="border-2"] {
+  border-width: 1px !important;
+}
+
+[class*="rounded-[32px]"],
+[class*="rounded-[40px]"],
+[class*="rounded-3xl"] {
+  border-radius: 16px !important;
+}
+
+[class*="rounded-[48px]"] {
+  border-radius: 20px !important;
+}
+
+.absolute.rounded-full[class*="blur-"],
+.absolute[class*="blur-[120px]"],
+.absolute[class*="blur-[150px]"] {
+  display: none !important;
+}
+
+main img {
+  filter: grayscale(1);
+}
+
+[class*="tracking-tight"],
+[class*="tracking-tighter"] {
+  letter-spacing: 0 !important;
+}

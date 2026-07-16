@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import {ManagedImage} from '@/components/ManagedImage';
+import {siteImages} from '@/lib/site-images';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -29,6 +31,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const shareUrl = `https://ebirdtech.com/blog/${post.slug}`;
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(post.title);
+  const postImage = siteImages.blog.posts[post.slug] ?? siteImages.blog.default;
 
   return (
     <>
@@ -54,9 +57,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           </header>
 
-          <div className="h-[280px] md:h-[420px] bg-panel-bg rounded-[32px] mb-12 p-8 flex items-center justify-center">
-            <div className="w-full h-full rounded-[24px] bg-white-soft flex items-center justify-center">
-              <span className="text-black text-5xl md:text-7xl font-black">EB</span>
+          <div className="h-[280px] md:h-[420px] bg-panel-bg rounded-[32px] mb-12 p-3 flex items-center justify-center overflow-hidden">
+            <div className="relative h-full w-full overflow-hidden rounded-[24px]">
+              <ManagedImage
+                image={postImage}
+                fill
+                sizes="(min-width: 1024px) 1000px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
 

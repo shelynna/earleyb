@@ -4,6 +4,9 @@ import { useMemo, useState } from 'react';
 import { blogCategories, blogPosts } from '@/lib/blog-posts';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
+import {ManagedImage} from '@/components/ManagedImage';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export default function BlogPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -37,6 +40,13 @@ export default function BlogPage() {
             Stay proactive with practical scam alerts, senior tech and wellness notes, small business technology guidance, and how-to guides for everyday devices.
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.blog}
+          eyebrow="Insights"
+          title="Security alerts, guides, and practical technology notes."
+          body="The blog now has a stronger visual lead-in and each article card can use an editable image slot from the shared image registry."
+        />
 
         <section className="max-w-[1200px] mx-auto px-4 mb-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 bg-white p-6 rounded-3xl">
@@ -74,9 +84,14 @@ export default function BlogPage() {
                   key={post.id}
                   className="bg-white rounded-[32px] overflow-hidden flex flex-col justify-between group hover:bg-soft-card-2 transition-colors"
                 >
-                  <div className="h-48 bg-panel-bg relative flex items-center justify-center p-8">
-                    <div className="w-full h-full bg-white-soft rounded-[24px] flex items-center justify-center relative z-10">
-                      <span className="text-black font-black text-3xl">EB</span>
+                  <div className="h-48 bg-panel-bg relative flex items-center justify-center overflow-hidden p-3">
+                    <div className="relative h-full w-full overflow-hidden rounded-[24px]">
+                      <ManagedImage
+                        image={siteImages.blog.posts[post.slug] ?? siteImages.blog.default}
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                      />
                     </div>
                   </div>
 

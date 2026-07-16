@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Our Password Management Protocol (Resident Security)",
@@ -20,6 +22,13 @@ export default function PasswordProtocol() {
             Have Security Questions? Contact Us.
           </Link>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.passwordProtocol}
+          eyebrow="Privacy first"
+          title="Security support without collecting resident passwords."
+          body="The protocol shows families and facilities how accounts are protected while keeping credentials outside EarleyBird storage."
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           

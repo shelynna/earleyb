@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import {ManagedImage} from '@/components/ManagedImage';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Business Solutions Portfolio | Websites, SEO, and IT Success Stories",
@@ -6,6 +9,8 @@ export const metadata = {
 };
 
 export default function BusinessPortfolio() {
+  const portfolioImages = siteImages.portfolio.business;
+
   return (
     <>
       <main className="w-full overflow-hidden bg-[#FAFAFA] min-h-screen">
@@ -24,13 +29,28 @@ export default function BusinessPortfolio() {
           </div>
         </section>
 
+        <PageImageSection
+          image={siteImages.pages.businessPortfolio}
+          eyebrow="Business projects"
+          title="Show the work with stronger visual case studies."
+          body="The portfolio now uses editable project image slots so website, SEO, IT, and SaaS examples can be updated with real client-approved visuals later."
+          reverse
+        />
+
         {/* Portfolio Showcase Grid */}
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             
             {/* Case Study 1: Web Design & SEO */}
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
-              <div className="h-64 bg-gradient-to-tr from-indigo-900 to-indigo-700 w-full relative flex items-center justify-center p-8">
+              <div className="h-64 bg-panel-bg w-full relative flex items-center justify-center overflow-hidden p-8">
+                <ManagedImage
+                  image={portfolioImages.oakridgeMedicalClinic}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-black/35"></div>
                 <div className="text-center text-white relative z-10">
                   <h3 className="text-3xl font-black">Oakridge Medical Clinic</h3>
                   <p className="text-indigo-200 mt-2 text-sm font-medium">Responsive Web Portal + Local SEO Optimization</p>
@@ -62,7 +82,14 @@ export default function BusinessPortfolio() {
 
             {/* Case Study 2: Managed IT & Security */}
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
-              <div className="h-64 bg-gradient-to-tr from-slate-900 to-slate-800 w-full relative flex items-center justify-center p-8">
+              <div className="h-64 bg-panel-bg w-full relative flex items-center justify-center overflow-hidden p-8">
+                <ManagedImage
+                  image={portfolioImages.pinnacleLawFirm}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-black/35"></div>
                 <div className="text-center text-white relative z-10">
                   <h3 className="text-3xl font-black">Pinnacle Law Firm</h3>
                   <p className="text-slate-300 mt-2 text-sm font-medium">Robust Internal Network + Cloud Disaster Recovery</p>
@@ -94,7 +121,14 @@ export default function BusinessPortfolio() {
 
             {/* Case Study 3: SEO Campaign & Marketing */}
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
-              <div className="h-64 bg-gradient-to-tr from-teal-900 to-teal-700 w-full relative flex items-center justify-center p-8">
+              <div className="h-64 bg-panel-bg w-full relative flex items-center justify-center overflow-hidden p-8">
+                <ManagedImage
+                  image={portfolioImages.apexContracting}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-black/35"></div>
                 <div className="text-center text-white relative z-10">
                   <h3 className="text-3xl font-black">Apex Contracting Co.</h3>
                   <p className="text-teal-200 mt-2 text-sm font-medium">B2B Lead Generation & Keyword Dominance</p>
@@ -126,7 +160,14 @@ export default function BusinessPortfolio() {
 
             {/* Case Study 4: SaaS Consulting & Integration */}
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
-              <div className="h-64 bg-gradient-to-tr from-orange-950 to-orange-900 w-full relative flex items-center justify-center p-8">
+              <div className="h-64 bg-panel-bg w-full relative flex items-center justify-center overflow-hidden p-8">
+                <ManagedImage
+                  image={portfolioImages.vanguardLogistical}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
+                <div className="absolute inset-0 bg-black/35"></div>
                 <div className="text-center text-white relative z-10">
                   <h3 className="text-3xl font-black">Vanguard Logistical</h3>
                   <p className="text-orange-200 mt-2 text-sm font-medium">CRM Setup & Workflow Automation</p>

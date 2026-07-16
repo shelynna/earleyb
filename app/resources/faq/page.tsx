@@ -4,6 +4,8 @@ import { useState, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 interface FAQItem {
   question: string;
@@ -135,6 +137,13 @@ export default function FAQPage() {
             Find answers about our Tech Concierge Program, password policy, web design services, and in-home technology support.
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.faq}
+          eyebrow="Quick answers"
+          title="Common questions grouped by the people we support."
+          body="Facilities, small businesses, individuals, and families can scan the right category and jump into the details they need."
+        />
 
         <section className="max-w-[900px] mx-auto px-4">
           <div className="space-y-10">

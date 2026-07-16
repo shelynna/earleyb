@@ -1,4 +1,5 @@
 import {ManagedImage} from '@/components/ManagedImage';
+import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 import {ArrowUpRight} from 'lucide-react';
 import Link from 'next/link';
@@ -51,6 +52,13 @@ export default function SeniorLivingPortfolio() {
             Become a Partner Community
           </Link>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.seniorPortfolio}
+          eyebrow="Community partners"
+          title="Case studies should feel like real places."
+          body="Each community card now pulls from editable image slots, so facility imagery can be swapped as client-approved photos become available."
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           

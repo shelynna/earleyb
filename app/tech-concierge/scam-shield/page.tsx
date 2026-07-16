@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "The Scam-Shield Program | Protecting Seniors from Financial Fraud",
@@ -21,6 +23,14 @@ export default function ScamShield() {
             Protect Your Residents. Book a Consultation.
           </Link>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.scamShield}
+          eyebrow="Scam-Shield"
+          title="Make scam prevention visible and actionable."
+          body="Residents, families, and staff need clear warning signs before a scam becomes a crisis. Scam-Shield turns risk awareness into a recurring support workflow."
+          reverse
+        />
 
         {/* Data section */}
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">

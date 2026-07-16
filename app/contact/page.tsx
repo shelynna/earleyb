@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -42,6 +44,13 @@ export default function Contact() {
             Contact EarleyBird for facility programs, business technology work, personal tech support, or general inquiries.
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.contact}
+          eyebrow="Responsive support"
+          title="Start the conversation with the right details."
+          body="Whether the need is facility support, business technology, or personal tech help, the contact form gives EarleyBird the context to respond clearly."
+        />
 
         <section className="pb-24 px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

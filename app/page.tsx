@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default function Home() {
   const homeImages = siteImages.home;
+  const blogImages = siteImages.blog.posts;
 
   return (
     <>
@@ -237,7 +238,12 @@ export default function Home() {
             {/* Card 1 */}
             <Link href="/blog" className="group cursor-pointer block">
               <div className="w-full h-[300px] md:h-[450px] bg-panel-bg rounded-[24px] md:rounded-[40px] mb-4 md:mb-6 overflow-hidden relative flex items-center justify-center p-4 md:p-8">
-                <span className="text-black/70 text-3xl font-black">EB</span>
+                <ManagedImage
+                  image={blogImages['phishing-scams-targeting-seniors']}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
               </div>
               <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Scam Alerts • Oct 12</p>
               <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">5 New Phishing Scams Targeting Seniors</h4>
@@ -245,7 +251,12 @@ export default function Home() {
             {/* Card 2 */}
             <Link href="/blog" className="group cursor-pointer block">
               <div className="w-full h-[300px] md:h-[450px] bg-panel-bg rounded-[24px] md:rounded-[40px] mb-4 md:mb-6 overflow-hidden relative flex items-center justify-center p-4 md:p-8">
-                <span className="text-black/70 text-3xl font-black">EB</span>
+                <ManagedImage
+                  image={blogImages['tech-help-no-longer-optional-senior-living']}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
               </div>
               <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Senior Tech & Wellness • Oct 08</p>
               <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">Bridging the Digital Divide in Assisted Living</h4>
@@ -253,7 +264,12 @@ export default function Home() {
             {/* Card 3 */}
             <Link href="/blog" className="group cursor-pointer hidden md:block">
               <div className="w-full h-[450px] bg-panel-bg rounded-[40px] mb-6 overflow-hidden relative flex items-center justify-center p-8">
-                <span className="text-black/70 text-3xl font-black">EB</span>
+                <ManagedImage
+                  image={blogImages['why-your-website-fails-to-convert']}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                />
               </div>
               <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Small Business Tech • Sep 24</p>
               <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">3 Reasons Your Website Fails to Convert</h4>

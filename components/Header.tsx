@@ -169,11 +169,6 @@ export function Header() {
               </div>
             </div>
 
-            {/* Blog */}
-            <Link href="/blog" className={`flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider transition-colors duration-300 py-4 ${isActive('/blog') ? 'text-white' : 'text-page-bg/80 hover:text-page-bg'}`}>
-              Blog
-            </Link>
-
           </nav>
         </div>
         <Link href="/book" className="hidden sm:flex bg-white text-action rounded-full hover:bg-white/90 transition-colors duration-300 shrink-0 items-center px-5 md:px-8 text-[10px] h-[56px] font-bold uppercase tracking-widest cursor-pointer">

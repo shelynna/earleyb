@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Core Tech Services (All Plans) | EarleyBird Concierge Program",
@@ -20,6 +22,13 @@ export default function CoreServices() {
             View Pricing Plans
           </Link>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.coreServices}
+          eyebrow="Every plan"
+          title="A practical support rhythm for daily resident needs."
+          body="Core services combine drop-in help, device hygiene, scam awareness, and family connection setup so residents get the basics right every week."
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

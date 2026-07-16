@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Our Mission & Story | About EarleyBird Technology Solutions",
@@ -27,6 +29,13 @@ export default function About() {
             </p>
           </div>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.about}
+          eyebrow="Human-centered tech"
+          title="Technology support that starts with people."
+          body="EarleyBird blends setup, education, and proactive protection so clients understand the tools they use instead of feeling overwhelmed by them."
+        />
 
         {/* Our Guiding Principle */}
         <section className="py-16 md:py-[100px] px-4 md:px-10 max-w-[1200px] mx-auto relative z-10">

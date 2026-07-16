@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "The EarleyBird Advantage | Why Choose Our Tech Concierge",
@@ -28,6 +30,14 @@ export default function WhyUs() {
             </Link>
           </div>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.whyUs}
+          eyebrow="Why EarleyBird"
+          title="Proactive support feels different in real life."
+          body="The advantage is not only what gets fixed. It is the confidence clients feel when help is patient, visible, and already looking for risk."
+          reverse
+        />
 
         {/* 4 Pillars of Advantage */}
         <section className="py-12 md:py-20 px-4 md:px-10 max-w-[1200px] mx-auto">
@@ -116,16 +126,18 @@ export default function WhyUs() {
         </section>
 
         {/* Core Philosophy Banner */}
-        <section className="bg-black text-white py-16 md:py-20 px-6 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Promise</h2>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-              {"\"We will never make you feel inadequate, we will never take control of your accounts without permission, and we will protect your digital space as if it were our own.\""}
-            </p>
-            <div className="flex justify-center">
-              <Link href="/book" className="bg-white text-black font-bold rounded-full hover:bg-gray-100 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-lg">
-                Talk to a Program Specialist
-              </Link>
+        <section className="px-4 md:px-10 pb-16 md:pb-24">
+          <div className="mx-auto max-w-[1440px] rounded-[32px] bg-action px-6 py-16 text-center text-white md:py-20">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Our Promise</h2>
+              <p className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto mb-8">
+                {"\"We will never make you feel inadequate, we will never take control of your accounts without permission, and we will protect your digital space as if it were our own.\""}
+              </p>
+              <div className="flex justify-center">
+                <Link href="/book" className="bg-white text-black font-bold rounded-full hover:bg-gray-100 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-lg">
+                  Talk to a Program Specialist
+                </Link>
+              </div>
             </div>
           </div>
         </section>

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export default function BookConsultation() {
   const [step, setStep] = useState(1);
@@ -58,6 +60,14 @@ export default function BookConsultation() {
             Use the tool below to book your appointment. Select the service you are interested in to get started.
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.book}
+          eyebrow="Booking"
+          title="Choose a time and tell us what kind of help you need."
+          body="The booking flow stays focused on date, time, and service type while the visual section helps the page feel less form-heavy."
+          reverse
+        />
 
         <section className="pb-24 px-4 md:px-10 max-w-[800px] mx-auto">
           {/* Progress Indicator */}

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import {ArrowUpRight} from 'lucide-react';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Tech Concierge Program for Senior Living | EarleyBird Solutions",
@@ -69,6 +71,13 @@ export default function TechConcierge() {
           </div>
         </section>
 
+        <PageImageSection
+          image={siteImages.pages.techConcierge}
+          eyebrow="On-site support"
+          title="Hands-on help residents can trust."
+          body="The program is built around face-to-face support, practical training, and proactive safety checks that reduce daily interruptions for facility teams."
+        />
+
         {/* The Urgent Imperative */}
         <section className="py-16 md:py-[100px] px-4 md:px-10 max-w-[1200px] mx-auto relative z-10">
           <div className="w-full bg-white rounded-[32px] md:rounded-[48px] p-8 md:p-16 relative overflow-hidden">
@@ -107,15 +116,12 @@ export default function TechConcierge() {
               >
                 <span className="flex items-start justify-between gap-6">
                   <span>
-                    <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-action/10 text-action transition-colors group-hover:bg-action group-hover:text-white">
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
                     <h3 className="text-xl md:text-2xl font-bold text-black mb-3">{item.title}</h3>
                     <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.description}</p>
                   </span>
                 </span>
                 <span className="mt-8 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-action">
-                  Open page
+                  Learn More
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
               </Link>

@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import type { LucideIcon } from 'lucide-react';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 import {
   ArrowLeft,
   GraduationCap,
@@ -349,6 +351,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const serviceImage = siteImages.services[slug] ?? siteImages.services.default;
+
   return (
     <>
       <main className="w-full bg-[#FAFAFA] min-h-screen pb-24">
@@ -372,6 +376,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
 
         </section>
+
+        <PageImageSection
+          image={serviceImage}
+          eyebrow={service.category}
+          title="See the service in a more practical context."
+          body="Each service page now has an editable image slot, giving the page more visual weight while keeping the details, benefits, and related links easy to scan."
+        />
 
         <section className="py-12 px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

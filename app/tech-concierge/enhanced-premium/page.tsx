@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Enhanced & Premium Services | EarleyBird Concierge Program",
@@ -28,6 +30,14 @@ export default function EnhancedPremium() {
             </Link>
           </div>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.enhancedPremium}
+          eyebrow="Standard and premium"
+          title="More coverage, clearer communication, less staff drag."
+          body="Enhanced services add the printed guides, family touchpoints, micro-training, and priority support that larger communities naturally need."
+          reverse
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

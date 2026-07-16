@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Tech Concierge Program Pricing & Plans | EarleyBird Solutions",
@@ -17,6 +19,13 @@ export default function Pricing() {
             {"Choose the level of support that fits your facility's needs and resident population."}
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.pricing}
+          eyebrow="Plan sizing"
+          title="Match support hours to the real size of the community."
+          body="The pricing page now pairs the plan table with a visual reminder that coverage should follow resident count, staff demand, and the level of proactive care needed."
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           {/* Pricing Table */}

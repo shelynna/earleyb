@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "Why Tech is Vital: Senior Well-Being, Cognition & Health",
@@ -20,6 +22,14 @@ export default function HealthWellness() {
             See Our Core Services
           </Link>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.healthWellness}
+          eyebrow="Connection and care"
+          title="Better tech support can support better wellness."
+          body="Family video calls, telehealth readiness, and simple device habits help residents stay connected, supported, and more confident day to day."
+          reverse
+        />
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           

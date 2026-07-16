@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import {PageImageSection} from '@/components/PageImageSection';
+import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: 'Client Login | EarleyBird Technology Solutions',
@@ -24,6 +26,13 @@ export default function ClientLogin() {
             Sign in to your account to access your profile, booking history, and any private pages you have been granted access to.
           </p>
         </section>
+
+        <PageImageSection
+          image={siteImages.pages.clientLogin}
+          eyebrow="Client access"
+          title="A cleaner entry point for secure service updates."
+          body="The portal area is designed to feel calm and direct, with visual context before clients choose the right access path."
+        />
 
         <section className="px-4 md:px-10 max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

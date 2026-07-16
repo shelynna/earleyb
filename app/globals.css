@@ -9,8 +9,9 @@
   --color-muted: #8B877F;
   --color-muted-light: #BCB8AF;
   --color-line: #D6D3CB;
-  --color-action: #155e75;
-  --color-action-hover: #0f4f63;
+  --color-action: rgb(40 131 156);
+  --color-action-hover: rgb(31 111 132);
+  --color-brand-bg: rgb(40 131 156);
   --color-black: #171717;
   --color-deep-black: #151515;
   --color-white-card: #FFFFFF;
@@ -52,7 +53,12 @@ body {
 [class*="to-slate-800"],
 [class*="to-blue-900"],
 [class*="to-orange-900"] {
-  background-color: var(--color-black) !important;
+  background-color: var(--color-brand-bg) !important;
+}
+
+[class~="bg-black"],
+[class~="bg-gray-900"] {
+  background-color: var(--color-brand-bg) !important;
 }
 
 [class*="text-transparent"][class*="bg-clip-text"] {
@@ -107,7 +113,7 @@ footer [class*="shadow"] {
 }
 
 main img {
-  filter: grayscale(1);
+  filter: none;
 }
 
 [class*="tracking-tight"],
@@ -120,8 +126,7 @@ button[class*="bg-black"][class*="text-white"][class*="font-bold"],
 a[class*="bg-blue-600"][class*="text-white"][class*="font-bold"],
 button[class*="bg-blue-600"][class*="text-white"][class*="font-bold"],
 a[class*="bg-red-600"][class*="text-white"][class*="font-bold"],
-button[class*="bg-red-600"][class*="text-white"][class*="font-bold"],
-header a[href="/book"][class*="font-bold"] {
+button[class*="bg-red-600"][class*="text-white"][class*="font-bold"] {
   background-color: var(--color-action) !important;
   border-color: var(--color-action) !important;
   color: #fff !important;
@@ -138,8 +143,7 @@ button[class*="bg-black"][class*="text-white"][class*="font-bold"]:hover,
 a[class*="bg-blue-600"][class*="text-white"][class*="font-bold"]:hover,
 button[class*="bg-blue-600"][class*="text-white"][class*="font-bold"]:hover,
 a[class*="bg-red-600"][class*="text-white"][class*="font-bold"]:hover,
-button[class*="bg-red-600"][class*="text-white"][class*="font-bold"]:hover,
-header a[href="/book"][class*="font-bold"]:hover {
+button[class*="bg-red-600"][class*="text-white"][class*="font-bold"]:hover {
   background-color: var(--color-action-hover) !important;
   border-color: var(--color-action-hover) !important;
   transform: translateY(-1px);

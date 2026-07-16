@@ -1,12 +1,64 @@
 'use client';
 
+import {useState} from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import {BrandLogo} from '@/components/BrandLogo';
+
+const mobileNavigation = [
+  {
+    label: 'EarleyBird Connect',
+    links: [
+      {href: '/', label: 'Home'},
+      {href: '/client-login', label: 'Client Login'},
+      {href: '/contact', label: 'Contact Us'},
+      {href: '/book', label: 'Book Consultation'},
+    ],
+  },
+  {
+    label: 'Tech Concierge',
+    links: [
+      {href: '/tech-concierge', label: 'Tech Concierge Home'},
+      {href: '/tech-concierge/core-services', label: 'Core Services'},
+      {href: '/tech-concierge/enhanced-premium', label: 'Enhanced & Premium'},
+      {href: '/tech-concierge/scam-shield', label: 'Scam-Shield Program'},
+      {href: '/tech-concierge/pricing', label: 'Pricing & Plans'},
+      {href: '/tech-concierge/password-protocol', label: 'Password Protocol'},
+      {href: '/portfolio/senior-living', label: 'Facility Portfolio'},
+    ],
+  },
+  {
+    label: 'Services',
+    links: [
+      {href: '/services/business-solutions', label: 'Business Solutions'},
+      {href: '/services/website-design', label: 'Website Design'},
+      {href: '/services/seo-campaigns', label: 'SEO Campaigns'},
+      {href: '/services/managed-it', label: 'Managed IT'},
+      {href: '/services/personal-tech-help', label: 'Personal Tech Help'},
+      {href: '/services/one-on-one-training', label: '1-on-1 Training'},
+      {href: '/services/scam-fraud-prevention', label: 'Scam & Fraud Prevention'},
+      {href: '/services/smart-home-install', label: 'Smart Home Install'},
+      {href: '/services/tech-help-repair', label: 'Tech Help & Repair'},
+    ],
+  },
+  {
+    label: 'Company',
+    links: [
+      {href: '/portfolio/business', label: 'Business Portfolio'},
+      {href: '/about', label: 'About Us'},
+      {href: '/about/why-us', label: 'Why Us'},
+      {href: '/about/digital-literacy', label: 'Digital Literacy'},
+      {href: '/about/health-wellness', label: 'Health & Wellness'},
+      {href: '/blog', label: 'Blog & News'},
+      {href: '/resources/faq', label: 'FAQ'},
+    ],
+  },
+] as const;
 
 export function Header() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => pathname === path;
   
@@ -14,11 +66,11 @@ export function Header() {
   const isGroupActive = (paths: string[]) => paths.some((p) => pathname === p || pathname.startsWith(p + '/'));
 
   return (
-    <header className="fixed top-[24px] left-0 right-0 z-50 flex items-center justify-center px-4 md:px-8 w-full pointer-events-none">
-      <div className="pointer-events-auto w-full max-w-[1130px] flex items-center justify-between bg-black rounded-full px-2 py-2 h-[72px]">
-        <div className="flex items-center gap-6 pl-2">
+    <header className="fixed top-[24px] left-0 right-0 z-50 flex flex-col items-center px-4 md:px-8 w-full pointer-events-none">
+      <div className="pointer-events-auto w-full max-w-[1130px] flex items-center justify-between gap-2 bg-action rounded-full px-2 py-2 h-[72px]">
+        <div className="flex min-w-0 items-center gap-4 lg:gap-6 pl-2">
           <Link href="/" className="flex h-12 shrink-0 items-center">
-            <BrandLogo className="h-11 w-auto object-contain" priority />
+            <BrandLogo className="h-10 sm:h-11 w-auto object-contain" priority />
           </Link>
           <nav className="hidden lg:flex items-center gap-5">
             {/* EarleyBird Connect */}
@@ -123,10 +175,54 @@ export function Header() {
 
           </nav>
         </div>
-        <Link href="/book" className="bg-[#155e75] text-white rounded-full hover:bg-[#0f4f63] transition-colors duration-300 shrink-0 flex items-center px-8 text-[10px] h-[56px] font-bold uppercase tracking-widest cursor-pointer">
+        <Link href="/book" className="hidden sm:flex bg-white text-action rounded-full hover:bg-white/90 transition-colors duration-300 shrink-0 items-center px-5 md:px-8 text-[10px] h-[56px] font-bold uppercase tracking-widest cursor-pointer">
           Book Consult
         </Link>
+        <button
+          type="button"
+          className="lg:hidden flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/25 text-white hover:bg-white/10 transition-colors"
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+        >
+          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </div>
+
+      {isMobileMenuOpen ? (
+        <div
+          id="mobile-navigation"
+          className="pointer-events-auto mt-3 w-full max-w-[1130px] lg:hidden max-h-[calc(100vh-120px)] overflow-y-auto rounded-[24px] bg-action p-4 text-white shadow-[0_18px_45px_rgb(0_0_0/0.18)]"
+        >
+          <div className="grid gap-4 sm:grid-cols-2">
+            {mobileNavigation.map((section) => (
+              <section key={section.label} className="border-t border-white/15 pt-4 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-4">
+                <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-white/55">{section.label}</p>
+                <div className="grid gap-1">
+                  {section.links.map((link) => {
+                    const active = isActive(link.href);
+
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        aria-current={active ? 'page' : undefined}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
+                          active ? 'bg-white text-action' : 'text-white/85 hover:bg-white/10 hover:text-white'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }

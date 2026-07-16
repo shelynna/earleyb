@@ -1,9 +1,54 @@
 import Link from 'next/link';
+import {ArrowUpRight} from 'lucide-react';
 
 export const metadata = {
   title: "Tech Concierge Program for Senior Living | EarleyBird Solutions",
   description: "On-site tech support for assisted living. Our program empowers residents, reduces staff burden, and protects your facility's reputation.",
 };
+
+const conciergeLinks = [
+  {
+    href: '/tech-concierge/core-services',
+    title: 'Core Services',
+    description: 'See the 8 essential services included in every facility plan.',
+  },
+  {
+    href: '/tech-concierge/enhanced-premium',
+    title: 'Enhanced & Premium',
+    description: 'Explore premium add-ons like family seminars and staff micro-training.',
+  },
+  {
+    href: '/tech-concierge/scam-shield',
+    title: 'Scam-Shield Program',
+    description: 'Learn about our mandatory, proactive defense against financial fraud.',
+  },
+  {
+    href: '/tech-concierge/pricing',
+    title: 'Pricing & Plans',
+    description: 'Simple, transparent pricing for any size community.',
+  },
+  {
+    href: '/about/digital-literacy',
+    title: 'The Case for Tech',
+    description: 'The critical data on digital access and literacy for seniors.',
+  },
+  {
+    href: '/about/health-wellness',
+    title: 'Well-Being & Cognition',
+    description: 'How tech use is linked to higher life satisfaction and health.',
+  },
+  {
+    href: '/tech-concierge/password-protocol',
+    title: 'Password Protocol',
+    description: 'Our zero-storage policy for maximum privacy and security.',
+  },
+  {
+    href: '/portfolio/senior-living',
+    title: 'Our Portfolio',
+    description: 'See the communities that partner with EarleyBird.',
+    wide: true,
+  },
+] as const;
 
 export default function TechConcierge() {
   return (
@@ -11,8 +56,6 @@ export default function TechConcierge() {
       <main className="w-full overflow-hidden bg-[#FAFAFA]">
         {/* Hero */}
         <section className="pt-[180px] md:pt-[240px] px-4 md:px-10 max-w-[1728px] mx-auto flex flex-col items-center text-center relative overflow-visible pb-[80px] md:pb-[120px]">
-          <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-gradient-to-tr from-[#4Facfe] to-[#00f2fe] rounded-full blur-[120px] opacity-20 z-0 pointer-events-none"></div>
-          
           <h1 className="text-[48px] md:text-[80px] font-bold leading-[1.1] tracking-tighter text-balance max-w-5xl mb-8 text-black relative z-10">
             Empowering Residents. Reducing Staff Burden. Protecting Facility Reputation.
           </h1>
@@ -53,47 +96,30 @@ export default function TechConcierge() {
             We provide a dedicated, on-site Tech Concierge who provides hands-on support, proactive security, and operational relief for your staff. <strong className="text-black">We are not a remote help desk; we are an integrated partner.</strong>
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Nav Cards */}
-            <Link href="/tech-concierge/core-services" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Core Services</h3>
-              <p className="text-gray-600 text-sm">See the 8 essential services included in every facility plan.</p>
-            </Link>
-
-            <Link href="/tech-concierge/enhanced-premium" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Enhanced & Premium</h3>
-              <p className="text-gray-600 text-sm">Explore premium add-ons like family seminars and staff micro-training.</p>
-            </Link>
-
-            <Link href="/tech-concierge/scam-shield" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Scam-Shield Program</h3>
-              <p className="text-gray-600 text-sm">Learn about our mandatory, proactive defense against financial fraud.</p>
-            </Link>
-
-            <Link href="/tech-concierge/pricing" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Pricing & Plans</h3>
-              <p className="text-gray-600 text-sm">Simple, transparent pricing for any size community.</p>
-            </Link>
-
-            <Link href="/about/digital-literacy" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">The Case for Tech</h3>
-              <p className="text-gray-600 text-sm">The critical data on digital access & literacy for seniors.</p>
-            </Link>
-
-            <Link href="/about/health-wellness" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Well-Being & Cognition</h3>
-              <p className="text-gray-600 text-sm">How tech use is linked to higher life satisfaction and health.</p>
-            </Link>
-
-            <Link href="/tech-concierge/password-protocol" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center">
-              <h3 className="text-xl font-bold text-black mb-3">Password Protocol</h3>
-              <p className="text-gray-600 text-sm">Our zero-storage policy for maximum privacy and security.</p>
-            </Link>
-
-            <Link href="/portfolio/senior-living" className="bg-white p-8 rounded-3xl hover:bg-soft-card-2 transition-colors group flex flex-col items-center text-center lg:col-span-2">
-              <h3 className="text-xl font-bold text-black mb-3">Our Portfolio</h3>
-              <p className="text-gray-600 text-sm">See the communities that partner with EarleyBird.</p>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            {conciergeLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`clickable-card bg-white p-7 md:p-8 rounded-3xl group flex min-h-[190px] flex-col justify-between text-left outline-none focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 ${
+                  'wide' in item && item.wide ? 'lg:col-span-2' : ''
+                }`}
+              >
+                <span className="flex items-start justify-between gap-6">
+                  <span>
+                    <span className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-action/10 text-action transition-colors group-hover:bg-action group-hover:text-white">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-bold text-black mb-3">{item.title}</h3>
+                    <p className="text-gray-600 text-sm md:text-base leading-relaxed">{item.description}</p>
+                  </span>
+                </span>
+                <span className="mt-8 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-action">
+                  Open page
+                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </Link>
+            ))}
           </div>
         </section>
 

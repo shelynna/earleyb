@@ -59,6 +59,7 @@ const mobileNavigation = [
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
 
   const isActive = (path: string) => pathname === path;
   
@@ -67,7 +68,7 @@ export function Header() {
 
   return (
     <header className="fixed top-[24px] left-0 right-0 z-50 flex flex-col items-center px-4 md:px-8 w-full pointer-events-none">
-      <div className="pointer-events-auto w-full max-w-[1130px] flex items-center justify-between gap-2 bg-action rounded-full px-2 py-2 h-[72px]">
+      <div className="pointer-events-auto w-full max-w-[1440px] flex items-center justify-between gap-2 bg-action rounded-full px-2 py-2 h-[72px]">
         <div className="flex min-w-0 items-center gap-4 lg:gap-6 pl-2">
           <Link href="/" className="flex h-12 shrink-0 items-center">
             <BrandLogo className="h-10 sm:h-11 w-auto object-contain" priority />
@@ -79,7 +80,7 @@ export function Header() {
                 EarleyBird Connect
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[200px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[200px]">
                 <Link href="/" className={`text-xs px-4 py-2 rounded-lg transition-colors ${isActive('/') ? 'bg-white/10 text-white' : 'text-white/80 hover:text-white hover:bg-white/10'}`}>Home</Link>
                 <Link href="/client-login" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Client Login</Link>
                 <Link href="/contact" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Contact Us</Link>
@@ -93,7 +94,7 @@ export function Header() {
                 Tech Concierge
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[240px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[240px]">
                 <Link href="/tech-concierge" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Tech Concierge Home</Link>
                 <Link href="/tech-concierge/core-services" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Core Services</Link>
                 <Link href="/tech-concierge/enhanced-premium" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Enhanced &amp; Premium</Link>
@@ -112,7 +113,7 @@ export function Header() {
                 Services
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
                 <div className="px-4 py-1 text-[10px] font-bold text-white/40 uppercase tracking-widest mt-2 mb-1">Business</div>
                 <Link href="/services/business-solutions" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Business Solutions</Link>
                 <Link href="/services/website-design" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Website Design</Link>
@@ -136,7 +137,7 @@ export function Header() {
                 Portfolio
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
                 <Link href="/portfolio/senior-living" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Senior Living Portfolio</Link>
                 <Link href="/portfolio/business" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Business Portfolio</Link>
               </div>
@@ -148,7 +149,7 @@ export function Header() {
                 About
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[220px]">
                 <Link href="/about" className={`text-xs px-4 py-2 rounded-lg transition-colors ${isActive('/about') ? 'bg-white/10 text-white' : 'text-white/80 hover:text-white hover:bg-white/10'}`}>About Us</Link>
                 <Link href="/about/why-us" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Why Us (Our Advantage)</Link>
                 <Link href="/about/digital-literacy" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Data: Digital Literacy</Link>
@@ -162,7 +163,7 @@ export function Header() {
                 Resources
                 <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform duration-200" />
               </button>
-              <div className="absolute left-0 top-[100%] mt-2 hidden group-hover:flex flex-col bg-black rounded-2xl p-2 min-w-[200px]">
+              <div className="absolute left-0 top-[calc(100%-1px)] hidden group-hover:flex group-focus-within:flex flex-col bg-black rounded-2xl p-2 min-w-[200px]">
                 <Link href="/blog" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">Blog &amp; News</Link>
                 <Link href="/resources/faq" className="text-xs text-white/80 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-colors">FAQ</Link>
               </div>
@@ -184,7 +185,13 @@ export function Header() {
           aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-navigation"
-          onClick={() => setIsMobileMenuOpen((open) => !open)}
+          onClick={() => {
+            if (isMobileMenuOpen) {
+              setOpenMobileSection(null);
+            }
+
+            setIsMobileMenuOpen(!isMobileMenuOpen);
+          }}
         >
           {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -193,31 +200,45 @@ export function Header() {
       {isMobileMenuOpen ? (
         <div
           id="mobile-navigation"
-          className="pointer-events-auto mt-3 w-full max-w-[1130px] lg:hidden max-h-[calc(100vh-120px)] overflow-y-auto rounded-[24px] bg-action p-4 text-white shadow-[0_18px_45px_rgb(0_0_0/0.18)]"
+          className="pointer-events-auto mt-3 w-full max-w-[1440px] lg:hidden max-h-[calc(100vh-120px)] overflow-y-auto rounded-[24px] bg-action p-4 text-white shadow-[0_18px_45px_rgb(0_0_0/0.18)]"
         >
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-2 sm:grid-cols-2">
             {mobileNavigation.map((section) => (
-              <section key={section.label} className="border-t border-white/15 pt-4 first:border-t-0 first:pt-0 sm:first:border-t sm:first:pt-4">
-                <p className="mb-2 text-[10px] font-bold uppercase tracking-widest text-white/55">{section.label}</p>
-                <div className="grid gap-1">
-                  {section.links.map((link) => {
-                    const active = isActive(link.href);
+              <section key={section.label} className="rounded-2xl bg-white/10">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between gap-3 rounded-2xl px-4 py-3 text-left text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/10"
+                  aria-expanded={openMobileSection === section.label}
+                  aria-controls={`mobile-section-${section.label.toLowerCase().replaceAll(' ', '-')}`}
+                  onClick={() => setOpenMobileSection((current) => (current === section.label ? null : section.label))}
+                >
+                  {section.label}
+                  <ChevronDown className={`h-4 w-4 shrink-0 transition-transform ${openMobileSection === section.label ? 'rotate-180' : ''}`} />
+                </button>
+                {openMobileSection === section.label ? (
+                  <div id={`mobile-section-${section.label.toLowerCase().replaceAll(' ', '-')}`} className="grid gap-1 px-2 pb-3">
+                    {section.links.map((link) => {
+                      const active = isActive(link.href);
 
-                    return (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        aria-current={active ? 'page' : undefined}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={`rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
-                          active ? 'bg-white text-action' : 'text-white/85 hover:bg-white/10 hover:text-white'
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    );
-                  })}
-                </div>
+                      return (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          aria-current={active ? 'page' : undefined}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setOpenMobileSection(null);
+                          }}
+                          className={`rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors ${
+                            active ? 'bg-white text-action' : 'text-white/85 hover:bg-white/10 hover:text-white'
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : null}
               </section>
             ))}
           </div>

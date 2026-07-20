@@ -2,13 +2,15 @@ import Link from 'next/link';
 import {BrandLogo} from '@/components/BrandLogo';
 
 const serviceLinks = [
-  { href: '/tech-concierge', label: 'Senior Living Solutions' },
-  { href: '/services/business-solutions', label: 'Small Business IT' },
-  { href: '/services/website-design', label: 'Web Design & SEO' },
+  { href: '/services', label: 'All Services' },
+  { href: '/tech-concierge/packages', label: 'Assisted Living & HOA Packages' },
   { href: '/services/personal-tech-help', label: 'Personal Tech Help' },
+  { href: '/services/computer-repair', label: 'Computer Repair' },
+  { href: '/services/website-design', label: 'Web Design' },
 ];
 
 const companyLinks = [
+  { href: '/connect', label: 'EarleyBird Connect' },
   { href: '/about', label: 'About Us' },
   { href: '/about/why-us', label: 'The EarleyBird Advantage' },
   { href: '/portfolio/senior-living', label: 'Portfolio' },
@@ -69,7 +71,7 @@ export function Footer() {
 
         <div className="pt-8 md:pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-semibold text-[10px] md:text-[11px] text-white/40 uppercase tracking-wider">
-            © 2026 EarleyBird Technology Solutions. All rights reserved.
+            &copy; 2026 EarleyBird Technology Solutions. All rights reserved.
           </p>
           <div className="flex gap-6 md:gap-8">
             <Link className="font-semibold text-[10px] md:text-[11px] text-white/40 hover:text-white transition-colors uppercase tracking-wider" href="/contact">

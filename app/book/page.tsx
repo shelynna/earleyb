@@ -8,7 +8,7 @@ import {siteImages} from '@/lib/site-images';
 
 export default function BookConsultation() {
   const [step, setStep] = useState(1);
-  const [selectedService, setSelectedService] = useState('Senior Living Facility Consultation');
+  const [selectedService, setSelectedService] = useState('Personal Tech Help / Training');
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [userInfo, setUserInfo] = useState({ name: '', email: '', orgName: '', notes: '' });
@@ -96,9 +96,12 @@ export default function BookConsultation() {
                     <h3 className="text-2xl font-bold text-black">Select Consultation Category</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {[
-                        'Senior Living Facility Consultation',
-                        'Small Business Consultation',
-                        'Book Personal Tech Help',
+                        'Personal Tech Help / Training',
+                        'Home Tech Help',
+                        'Virtual Tech Support',
+                        'Repair or Troubleshooting',
+                        'Assisted Living / HOA Package',
+                        'Website / Business Support',
                       ].map((service) => (
                         <button
                           key={service}

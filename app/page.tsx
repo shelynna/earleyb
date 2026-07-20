@@ -1,302 +1,333 @@
 import {ManagedImage} from '@/components/ManagedImage';
 import {siteImages} from '@/lib/site-images';
 import Link from 'next/link';
+import {
+  ArrowUpRight,
+  Building2,
+  Globe,
+  Home as HomeIcon,
+  Laptop,
+  ShieldCheck,
+  Smartphone,
+  Tv,
+  Wrench,
+} from 'lucide-react';
+
+const priorityServices = [
+  {
+    href: '/services/one-on-one-training',
+    title: '1-on-1 Tech Help',
+    description: 'Patient help with phones, computers, email, photos, apps, and everyday tech confidence.',
+    icon: Smartphone,
+  },
+  {
+    href: '/services/home-tech-help',
+    title: 'Home Tech Help',
+    description: 'In-home support for Wi-Fi, printers, smart TVs, accounts, setup, and device issues.',
+    icon: HomeIcon,
+  },
+  {
+    href: '/services/virtual-tech-support',
+    title: 'Virtual Tech Support',
+    description: 'Phone or video support when you need quick answers without an in-home visit.',
+    icon: Laptop,
+  },
+  {
+    href: '/services/scam-fraud-prevention',
+    title: 'Scam Detection',
+    description: 'Practical fraud prevention training for suspicious calls, texts, emails, and pop-ups.',
+    icon: ShieldCheck,
+  },
+  {
+    href: '/services/streaming-setup-assistance',
+    title: 'Streaming Setup',
+    description: 'Smart TV, streaming apps, remotes, favorites, captions, and subscription setup.',
+    icon: Tv,
+  },
+  {
+    href: '/services/tech-help-repair',
+    title: 'Repair and Troubleshooting',
+    description: 'Computer repair, phone repair guidance, cleanup, updates, diagnostics, and quotes.',
+    icon: Wrench,
+  },
+  {
+    href: '/services/website-design',
+    title: 'Web Design',
+    description: 'Professional websites with hosting, SEO-ready structure, and ongoing care.',
+    icon: Globe,
+  },
+  {
+    href: '/tech-concierge/packages',
+    title: 'Assisted Living and HOA',
+    description: 'Recurring tech concierge packages for residents, communities, and facility teams.',
+    icon: Building2,
+  },
+] as const;
+
+const audienceCards = [
+  {
+    href: '/services',
+    title: 'Individuals and Families',
+    description: 'Personal tech help, repair, streaming, scam prevention, and smart home support.',
+    imageKey: 'personalTechCard',
+  },
+  {
+    href: '/tech-concierge/packages',
+    title: 'Assisted Living and HOA',
+    description: 'Recurring tech concierge packages for residents, facilities, and communities.',
+    imageKey: 'seniorLivingCard',
+  },
+  {
+    href: '/services/business-solutions',
+    title: 'Small Businesses',
+    description: 'Web design, SEO, managed IT, software setup, and practical technology support.',
+    imageKey: 'businessCard',
+  },
+] as const;
 
 export default function Home() {
   const homeImages = siteImages.home;
   const blogImages = siteImages.blog.posts;
 
   return (
-    <>
-
-      <main className="w-full overflow-hidden">
-        {/* 1. Hero */}
-        <section className="pt-[180px] md:pt-[240px] px-4 md:px-10 max-w-[1728px] mx-auto flex flex-col items-center text-center relative overflow-visible pb-[120px] md:pb-[160px]">
-          <h1 className="text-[56px] md:text-[82px] font-bold leading-[1.05] tracking-tighter text-balance max-w-5xl mb-6 text-text">
-            {"Simplifying today's technology"}
-          </h1>
-          <p className="text-base md:text-lg text-muted max-w-3xl mb-8 px-4">
-            We help individuals, families, small businesses, and facilities bridge the gap between people and technology, delivering solutions that improve efficiency, prevent risks, and create long-term confidence.
-          </p>
-          <div className="max-w-4xl mx-auto mb-16 relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#FF416C] to-[#FF4B2B] rounded-2xl blur opacity-20"></div>
-            <div className="relative bg-white/60 backdrop-blur-xl border border-white/50 p-6 md:p-8 rounded-2xl shadow-lg">
-              <p className="text-lg md:text-xl font-medium text-text leading-relaxed">
-                {"\"With our guiding principle—"}
-                <span className="font-bold text-black">{"'The Early Bird Gets the Worm'"}</span>
-                {"—we stay proactive so our clients are always a step ahead in the digital world.\""}
-              </p>
+    <main className="w-full overflow-hidden bg-[#FAFAFA]">
+      <section className="relative isolate min-h-[680px] overflow-hidden bg-deep-black text-white md:min-h-[760px]">
+        <ManagedImage
+          image={homeImages.hero}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-deep-black/62"></div>
+        <div className="relative z-10 mx-auto flex min-h-[680px] max-w-[1440px] flex-col justify-center px-4 pb-16 pt-[150px] md:min-h-[760px] md:px-10 md:pb-20 md:pt-[180px]">
+          <div className="max-w-4xl">
+            <span className="mb-5 text-[10px] font-bold uppercase tracking-widest text-white/75">
+              EarleyBird Technology Solutions
+            </span>
+            <h1 className="text-[44px] md:text-[72px] font-bold leading-[1.04] tracking-tight text-balance">
+              Tech help, repair, and protection without the runaround.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base md:text-xl font-medium leading-relaxed text-white/80">
+              Get 1-on-1 support, home tech help, virtual support, scam prevention, streaming setup, device repair, smart home installs, web design, and community tech packages.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/services" className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-xs font-bold uppercase tracking-widest text-action transition-colors hover:bg-white/90">
+                View All Services
+              </Link>
+              <Link href="/book" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
+                Book Tech Help
+              </Link>
+              <Link href="/tech-concierge/packages" className="inline-flex h-12 items-center justify-center rounded-full border border-white/35 px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-white/10">
+                Assisted Living and HOA
+              </Link>
             </div>
           </div>
-          <div className="w-full max-w-[1492px] bg-panel-bg overflow-hidden shadow-2xl relative z-10 rounded-[32px] md:rounded-[40px] h-[400px] md:h-[600px]">
-            <ManagedImage
-              image={homeImages.hero}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 2. Trust Strip */}
-        <section className="py-12 md:py-16 px-10 border-t border-line/30 max-w-[1728px] mx-auto flex flex-col items-center relative z-0 mt-8 md:mt-[40px]">
-          <div className="flex justify-center items-center opacity-100 text-muted w-full">
-            <div className="overflow-hidden w-full whitespace-nowrap">
-              <div className="inline-flex gap-[40px] md:gap-[100px] items-center text-muted animate-[scroll_30s_linear_infinite]">
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Senior Living Facilities</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Small Businesses</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Individuals & Families</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Proactive IT Support</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Scam-Shield Program</span>
-                {/* Duplicate for seamless loop */}
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Senior Living Facilities</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Small Businesses</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Individuals & Families</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Proactive IT Support</span>
-                <span className="text-xl md:text-2xl font-bold tracking-tight opacity-100 hover:text-black transition-colors cursor-default">Scam-Shield Program</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. Floating Visual Collage */}
-        <section className="min-h-[600px] md:min-h-[1000px] w-full max-w-[1728px] mx-auto relative overflow-hidden py-16 md:py-32 hidden md:flex flex-col items-center justify-center">
-          <div className="text-center opacity-100 text-muted pointer-events-none z-10 relative">
-            <div className="absolute -inset-10 bg-page-bg/80 blur-2xl z-[-1]"></div>
-            <h2 className="text-[64px] md:text-[120px] font-bold text-text tracking-tighter leading-[0.9] text-center relative">
-              Proactive<br/>Defense
+      <section className="px-4 pt-14 md:px-10 md:pt-20 max-w-[1440px] mx-auto pb-16 md:pb-24">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-3xl">
+            <span className="mb-3 inline-flex text-[10px] font-bold uppercase tracking-widest text-action">
+              Start Here
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-text">
+              Choose the service you need.
             </h2>
-            <p className="text-lg md:text-2xl mt-6 text-text/80 font-medium max-w-2xl mx-auto">
-              Protecting clients from scams and cyber threats is our priority.
+            <p className="mt-3 text-base md:text-lg font-medium leading-relaxed text-muted">
+              The fastest path is the right page first. Open a service, scan the details, then book or ask a question from there.
             </p>
           </div>
+          <Link href="/services" className="inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-action hover:text-action-hover">
+            All Services
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 shadow-2xl" style={{ left: '10%', top: '20%', width: '340px', height: '260px', zIndex: 5 }}>
-            <ManagedImage fill className="object-cover opacity-80" image={homeImages.proactiveDefenseLeft}/>
-          </div>
-          <div className="absolute rounded-[32px] overflow-hidden bg-white/10 backdrop-blur-2xl backdrop-saturate-150 border border-white/40 shadow-2xl" style={{ right: '12%', bottom: '20%', width: '280px', height: '320px', zIndex: 5 }}>
-            <ManagedImage fill className="object-cover opacity-80" image={homeImages.proactiveDefenseRight}/>
-          </div>
-        </section>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {priorityServices.map((service) => {
+            const Icon = service.icon;
 
-        {/* Mobile alternative for collage */}
-        <section className="py-16 px-4 md:hidden text-center">
-          <div className="flex flex-col gap-6 items-center">
-            <h2 className="text-4xl font-bold tracking-tight text-center">Proactive Defense</h2>
-            <p className="text-lg text-muted">Protecting clients from scams and cyber threats is our priority.</p>
-          </div>
-        </section>
-
-        {/* Trust Builder / The Problem */}
-        <section className="py-16 md:py-[120px] px-4 md:px-10 max-w-[1728px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-[100px] items-center">
-            <div className="flex flex-col justify-center h-full max-w-xl">
-              <h3 className="text-3xl md:text-[48px] mb-6 md:mb-8 font-bold tracking-tight text-text leading-tight">{"Technology Shouldn't Be a Risk."}</h3>
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-2xl mb-8">
-                <p className="text-xl font-bold text-red-700 mb-2">The US lost over $16.6 Billion in reported fraud in 2024</p>
-                <p className="text-base text-red-900/80">
-                  {"\"Seniors over 60 lost over $4.8 billion to internet crimes in 2024. Phishing/Smishing fraud was the #1 crime impacting this group.\""}
-                </p>
-              </div>
-              <p className="text-lg md:text-xl font-medium text-text mb-6">
-                We reduce these risks by giving seniors exactly what scammers hope they never have:
-              </p>
-              <ul className="space-y-4 mb-8 list-disc pl-5">
-                <li>
-                  <span className="text-base text-muted font-medium"><strong>Tech Education</strong> that builds confidence</span>
-                </li>
-                <li>
-                  <span className="text-base text-muted font-medium"><strong>Scam Awareness Training</strong> that makes deception easy to spot</span>
-                </li>
-                <li>
-                  <span className="text-base text-muted font-medium"><strong>A Support System</strong> they can trust before making a mistake</span>
-                </li>
-              </ul>
-              <div className="border-t border-line/50 pt-6">
-                <p className="text-lg font-bold text-text italic">Our mission is simple:</p>
-                <p className="text-xl font-bold text-text mb-2">Technology should make life easier — not more dangerous.</p>
-                <p className="text-base text-muted">We give people the knowledge, clarity, and support needed to stay safe in a digital world. Protecting clients from scams and cyber threats is our priority.</p>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-soft-card-2 to-soft-card rounded-[32px] md:rounded-[40px] p-6 md:p-8 h-[500px] md:h-[700px] flex items-center justify-center relative overflow-hidden">
-              <div className="w-full max-w-md bg-white-card rounded-3xl p-8 relative z-10">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="font-bold text-sm text-text uppercase tracking-widest text-muted">Proactive Defense</span>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex flex-col gap-2 p-4 bg-red-50/50 rounded-2xl">
-                    <div className="flex justify-between items-center">
-                      <span className="font-bold text-sm text-red-800">Scam Detection</span>
-                      <span className="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md">Blocked</span>
-                    </div>
-                    <p className="text-xs text-red-900/60 font-medium">Suspicious login attempt prevented via Scam-Shield</p>
+            return (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="clickable-card group flex min-h-[220px] flex-col justify-between rounded-3xl bg-white p-6 outline-none focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2"
+              >
+                <div>
+                  <div className="mb-5 flex items-center justify-between gap-4">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-soft-card text-action">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-action transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
-                  <div className="flex flex-col gap-2 p-4 bg-blue-50/50 rounded-2xl">
-                    <div className="flex justify-between items-center">
-                      <span className="font-bold text-sm text-blue-800">1-on-1 Training</span>
-                      <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md">Completed</span>
-                    </div>
-                    <p className="text-xs text-blue-900/60 font-medium">Device hygiene and family connection setup</p>
-                  </div>
-                  <div className="flex flex-col gap-2 p-4 bg-green-50/50 rounded-2xl">
-                    <div className="flex justify-between items-center">
-                      <span className="font-bold text-sm text-green-800">System Security</span>
-                      <span className="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">Optimal</span>
-                    </div>
-                    <p className="text-xs text-green-900/60 font-medium">All devices updated and monitored</p>
-                  </div>
+                  <h3 className="text-xl font-bold leading-tight text-text">{service.title}</h3>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-muted">{service.description}</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
-        {/* 6. Team Use Cases / Audience Segmentation */}
-        <section className="py-16 md:py-[120px] px-4 md:px-10 max-w-[1728px] mx-auto flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl mb-12 md:mb-16 font-bold tracking-tight text-center text-text">Tailored to your needs.</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-[1400px]">
-            {/* Senior Living Facilities */}
-            <Link href="/tech-concierge" className="group cursor-pointer flex flex-col h-full">
-              <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-line/20 mb-6">
-                <ManagedImage fill className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" image={homeImages.seniorLivingCard} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h4 className="text-2xl font-bold text-white mb-2">For Senior Living Facilities</h4>
-                </div>
-              </div>
-              <p className="text-base text-muted font-medium leading-relaxed px-2 flex-grow">
-                Concierge Tech Programs for assisted living facilities. We empower residents, reduce staff burden, and protect your reputation.
-              </p>
-              <div className="px-2 mt-6">
-                <span className="inline-block text-black font-bold border-b-2 border-black pb-1 group-hover:text-[#FF416C] group-hover:border-[#FF416C] transition-colors uppercase tracking-widest text-xs">Learn More</span>
-              </div>
-            </Link>
-
-            {/* Small Businesses */}
-            <Link href="/services/business-solutions" className="group cursor-pointer flex flex-col h-full">
-              <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-line/20 mb-6">
-                <ManagedImage fill className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" image={homeImages.businessCard} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h4 className="text-2xl font-bold text-white mb-2">For Small Businesses</h4>
-                </div>
-              </div>
-              <p className="text-base text-muted font-medium leading-relaxed px-2 flex-grow">
-                Professional website design with hosting & ongoing care packages, SEO campaigns, Email hosting, and Managed IT Services.
-              </p>
-              <div className="px-2 mt-6">
-                <span className="inline-block text-black font-bold border-b-2 border-black pb-1 group-hover:text-[#FF416C] group-hover:border-[#FF416C] transition-colors uppercase tracking-widest text-xs">Learn More</span>
-              </div>
-            </Link>
-
-            {/* Individuals & Families */}
-            <Link href="/services/personal-tech-help" className="group cursor-pointer flex flex-col h-full">
-              <div className="relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden shadow-sm border border-line/20 mb-6">
-                <ManagedImage fill className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" image={homeImages.personalTechCard} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h4 className="text-2xl font-bold text-white mb-2">For Individuals & Families</h4>
-                </div>
-              </div>
-              <p className="text-base text-muted font-medium leading-relaxed px-2 flex-grow">
-                Technology Education & Training. From 1-on-1 personalized training and scam prevention to in-home tech help and Smart Home setup.
-              </p>
-              <div className="px-2 mt-6">
-                <span className="inline-block text-black font-bold border-b-2 border-black pb-1 group-hover:text-[#FF416C] group-hover:border-[#FF416C] transition-colors uppercase tracking-widest text-xs">Learn More</span>
-              </div>
-            </Link>
-          </div>
-        </section>
-
-        {/* 7. Testimonial */}
-        <section className="py-16 md:py-[160px] px-6 max-w-[1200px] mx-auto flex flex-col items-center text-center">
-          <h2 className="text-2xl md:text-[56px] leading-[1.3] md:leading-[1.1] tracking-tight text-text mb-10 md:mb-16 text-balance max-w-[1000px] font-normal">
-            {"\"EarleyBird provides us with the knowledge, clarity, and support needed to stay safe in a digital world. Technology should make life easier—not more dangerous.\""}
-          </h2>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-line overflow-hidden shadow-md relative">
-              <ManagedImage fill className="object-cover" image={homeImages.testimonialAvatar} />
-            </div>
-            <div className="text-left">
-              <p className="text-xs md:text-sm font-bold text-text">Jane D.</p>
-              <p className="text-[10px] md:text-xs font-semibold text-muted uppercase tracking-wider mt-1">Facility Director</p>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Updates */}
-        <section className="py-16 md:py-[120px] px-4 md:px-10 max-w-[1728px] mx-auto">
-          <div className="flex justify-between items-end mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-text">Tech Insights</h2>
-            <Link href="/blog" className="text-xs md:text-sm font-bold border-b border-black text-text pb-1 hover:text-[#FF416C] hover:border-[#FF416C] transition-colors cursor-pointer">
-              View Blog
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-            {/* Card 1 */}
-            <Link href="/blog" className="group cursor-pointer block">
-              <div className="w-full h-[300px] md:h-[450px] bg-panel-bg rounded-[24px] md:rounded-[40px] mb-4 md:mb-6 overflow-hidden relative flex items-center justify-center p-4 md:p-8">
+      <section className="px-4 md:px-10 max-w-[1440px] mx-auto pb-16 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {audienceCards.map((card) => (
+            <Link key={card.href} href={card.href} className="group flex flex-col">
+              <div className="relative mb-5 h-[300px] overflow-hidden rounded-3xl bg-panel-bg">
                 <ManagedImage
-                  image={blogImages['phishing-scams-targeting-seniors']}
+                  image={homeImages[card.imageKey]}
                   fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
+                <div className="absolute inset-0 bg-deep-black/30"></div>
+                <div className="absolute bottom-5 left-5 right-5">
+                  <h3 className="text-2xl font-bold text-white">{card.title}</h3>
+                </div>
               </div>
-              <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Scam Alerts • Oct 12</p>
-              <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">5 New Phishing Scams Targeting Seniors</h4>
+              <p className="px-1 text-base font-medium leading-relaxed text-muted">{card.description}</p>
+              <span className="mt-5 inline-flex items-center gap-2 px-1 text-[11px] font-bold uppercase tracking-widest text-action">
+                Explore
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
             </Link>
-            {/* Card 2 */}
-            <Link href="/blog" className="group cursor-pointer block">
-              <div className="w-full h-[300px] md:h-[450px] bg-panel-bg rounded-[24px] md:rounded-[40px] mb-4 md:mb-6 overflow-hidden relative flex items-center justify-center p-4 md:p-8">
-                <ManagedImage
-                  image={blogImages['tech-help-no-longer-optional-senior-living']}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                />
-              </div>
-              <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Senior Tech & Wellness • Oct 08</p>
-              <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">Bridging the Digital Divide in Assisted Living</h4>
-            </Link>
-            {/* Card 3 */}
-            <Link href="/blog" className="group cursor-pointer hidden md:block">
-              <div className="w-full h-[450px] bg-panel-bg rounded-[40px] mb-6 overflow-hidden relative flex items-center justify-center p-8">
-                <ManagedImage
-                  image={blogImages['why-your-website-fails-to-convert']}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                />
-              </div>
-              <p className="text-[10px] md:text-xs font-semibold text-muted mb-2 md:mb-3 uppercase tracking-wider">Small Business Tech • Sep 24</p>
-              <h4 className="text-lg md:text-xl font-bold text-text group-hover:text-black transition-colors">3 Reasons Your Website Fails to Convert</h4>
-            </Link>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* 9. Demo CTA */}
-        <section className="py-20 md:py-[160px] px-6 max-w-screen-xl mx-auto flex flex-col items-center text-center">
-          <div className="relative z-10 flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full border border-text flex items-center justify-center mb-8 md:mb-12">
-              <span className="text-text font-bold text-xl leading-none">EB</span>
-            </div>
-            <h2 className="text-[40px] md:text-[80px] font-bold text-text tracking-tighter leading-[1.05] mb-8 md:mb-12 max-w-4xl text-balance">
-              Experience the future of tech support
+      <section className="py-16 md:py-[110px] px-4 md:px-10 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="max-w-xl">
+            <span className="mb-4 inline-flex text-[10px] font-bold uppercase tracking-widest text-action">
+              Scam Prevention
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-text">
+              Technology should make life easier, not riskier.
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full sm:w-auto">
-              <Link href="/book" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 shrink-0 flex items-center justify-center px-8 md:px-12 text-[10px] md:text-xs h-[48px] md:h-[56px] uppercase tracking-wider shadow-sm w-full sm:w-auto cursor-pointer">
-                Schedule a call
+            <p className="mt-5 text-base md:text-lg font-medium leading-relaxed text-muted">
+              EarleyBird pairs setup and repair with education, so customers understand what changed and how to stay safer next time.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/services/scam-fraud-prevention" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
+                Scam Prevention
               </Link>
-              <Link href="/tech-concierge" className="bg-transparent border border-text/30 text-text font-bold rounded-full hover:bg-soft-card transition-all duration-300 shrink-0 flex items-center justify-center px-8 md:px-12 text-[10px] md:text-xs h-[48px] md:h-[56px] uppercase tracking-wider w-full sm:w-auto cursor-pointer">
-                Explore Services
+              <Link href="/about/digital-literacy" className="inline-flex h-12 items-center justify-center rounded-full border border-gray-300 px-7 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-white">
+                Digital Literacy
               </Link>
             </div>
           </div>
-        </section>
-      </main>
-    </>
+
+          <div className="rounded-3xl bg-white p-6 md:p-8">
+            <div className="grid gap-4">
+              {[
+                ['Detect', 'Learn the warning signs of suspicious calls, texts, emails, and pop-ups.'],
+                ['Prevent', 'Set up safer habits for accounts, passwords, devices, and online decisions.'],
+                ['Respond', 'Know what to do before clicking, paying, sharing information, or panicking.'],
+              ].map(([title, description]) => (
+                <div key={title} className="rounded-2xl bg-soft-card-2 p-5">
+                  <h3 className="text-lg font-bold text-text">{title}</h3>
+                  <p className="mt-2 text-sm font-medium leading-relaxed text-muted">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-[100px] px-4 md:px-10 max-w-[1440px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-16 items-center rounded-[32px] bg-white p-6 md:p-10">
+          <div className="relative min-h-[320px] overflow-hidden rounded-3xl bg-panel-bg">
+            <ManagedImage
+              image={siteImages.pages.contact}
+              fill
+              sizes="(min-width: 1024px) 520px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <span className="mb-4 inline-flex text-[10px] font-bold uppercase tracking-widest text-action">
+              EarleyBird Connect
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight text-text">
+              Follow, learn, and reach us from one place.
+            </h2>
+            <p className="mt-5 text-base md:text-lg font-medium leading-relaxed text-muted">
+              Connect is where social updates, tech insights, contact paths, and future digital self-help resources live together.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/connect" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
+                EarleyBird Connect
+              </Link>
+              <Link href="/blog" className="inline-flex h-12 items-center justify-center rounded-full border border-gray-300 px-7 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-soft-card">
+                Tech Insights
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-[100px] px-4 md:px-10 max-w-[1440px] mx-auto">
+        <div className="mb-8 flex items-end justify-between gap-6">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-text">Tech Insights</h2>
+          <Link href="/blog" className="text-xs font-bold border-b border-black text-text pb-1 hover:text-action hover:border-action transition-colors">
+            View Blog
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              href: '/blog/phishing-scams-targeting-seniors',
+              image: blogImages['phishing-scams-targeting-seniors'],
+              label: 'Scam Alerts',
+              title: '5 New Phishing Scams Targeting Seniors',
+            },
+            {
+              href: '/blog/tech-help-no-longer-optional-senior-living',
+              image: blogImages['tech-help-no-longer-optional-senior-living'],
+              label: 'Senior Tech',
+              title: 'Bridging the Digital Divide in Assisted Living',
+            },
+            {
+              href: '/blog/why-your-website-fails-to-convert',
+              image: blogImages['why-your-website-fails-to-convert'],
+              label: 'Small Business Tech',
+              title: '3 Reasons Your Website Fails to Convert',
+            },
+          ].map((post) => (
+            <Link key={post.href} href={post.href} className="group block">
+              <div className="relative mb-5 h-[300px] overflow-hidden rounded-3xl bg-panel-bg">
+                <ManagedImage
+                  image={post.image}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                />
+              </div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted">{post.label}</p>
+              <h3 className="text-lg md:text-xl font-bold text-text transition-colors group-hover:text-action">{post.title}</h3>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20 md:py-[130px] px-6 max-w-[1100px] mx-auto text-center">
+        <span className="mb-5 inline-flex text-[10px] font-bold uppercase tracking-widest text-action">
+          Ready when you are
+        </span>
+        <h2 className="text-[40px] md:text-[72px] font-bold text-text tracking-tight leading-[1.05] text-balance">
+          Get to the right tech help in one click.
+        </h2>
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/services" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-8 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
+            View All Services
+          </Link>
+          <Link href="/book" className="inline-flex h-12 items-center justify-center rounded-full border border-gray-300 px-8 text-xs font-bold uppercase tracking-widest text-text transition-colors hover:bg-soft-card">
+            Book Support
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

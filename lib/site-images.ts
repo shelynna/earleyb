@@ -35,8 +35,8 @@ type SiteImagesRegistry = {
 export const siteImages: SiteImagesRegistry = {
   home: {
     hero: {
-      src: 'https://images.pexels.com/photos/10410241/pexels-photo-10410241.jpeg',
-      alt: 'Vibrant abstract gradient',
+      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
+      alt: 'Friendly technology support session',
       referrerPolicy: googleImageReferrerPolicy,
     },
     proactiveDefenseLeft: {
@@ -234,6 +234,16 @@ export const siteImages: SiteImagesRegistry = {
       alt: 'Personal technology training and support',
       referrerPolicy: googleImageReferrerPolicy,
     },
+    'home-tech-help': {
+      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
+      alt: 'In-home technology help and device setup',
+      referrerPolicy: googleImageReferrerPolicy,
+    },
+    'virtual-tech-support': {
+      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
+      alt: 'Virtual technology support session',
+      referrerPolicy: googleImageReferrerPolicy,
+    },
     'one-on-one-training': {
       src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
       alt: 'One-on-one device training session',
@@ -252,6 +262,21 @@ export const siteImages: SiteImagesRegistry = {
     'cut-the-cord': {
       src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
       alt: 'Streaming device setup and entertainment training',
+      referrerPolicy: googleImageReferrerPolicy,
+    },
+    'streaming-setup-assistance': {
+      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
+      alt: 'Streaming setup assistance for smart TVs and apps',
+      referrerPolicy: googleImageReferrerPolicy,
+    },
+    'computer-repair': {
+      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
+      alt: 'Computer repair and troubleshooting support',
+      referrerPolicy: googleImageReferrerPolicy,
+    },
+    'mobile-phone-repair': {
+      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
+      alt: 'Mobile phone repair and setup support',
       referrerPolicy: googleImageReferrerPolicy,
     },
     'tech-help-repair': {

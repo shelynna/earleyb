@@ -5,7 +5,7 @@ import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
   title: "EarleyBird Tech Concierge | 1-on-1, Home, Virtual, and Community Tech Help",
-  description: "Tech concierge support for 1-on-1 help, home tech help, virtual support, scam prevention, streaming setup, assisted living communities, and HOAs.",
+  description: "Tech concierge support for 1-on-1 help, home tech help, virtual support, scam prevention, TV and streaming help, assisted living communities, and HOAs.",
 };
 
 const conciergeLinks = [
@@ -36,7 +36,7 @@ const conciergeLinks = [
   },
   {
     href: '/services/streaming-setup-assistance',
-    title: 'Streaming Setup Assistance',
+    title: 'EarleyBird TV and Streaming Concierge',
     description: 'Set up apps, remotes, favorites, captions, logins, and smart TV basics.',
   },
   {
@@ -62,9 +62,9 @@ export default function TechConcierge() {
           </h1>
           <div className="max-w-4xl relative z-10 flex flex-col items-center">
             <p className="text-lg md:text-2xl text-gray-600 mb-12 px-4 leading-relaxed font-medium">
-              1-on-1 tech help, home tech help, virtual support, scam prevention, streaming setup, and community packages for assisted living and HOAs.
+              1-on-1 tech help, home tech help, virtual support, scam prevention, TV and streaming concierge, and community packages for assisted living and HOAs.
             </p>
-            <Link href="/book" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-10 py-4 text-xs uppercase tracking-widest shadow-md">
+            <Link href="/book?service=Tech%20Concierge" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-10 py-4 text-xs uppercase tracking-widest shadow-md">
               Book Tech Concierge
             </Link>
           </div>

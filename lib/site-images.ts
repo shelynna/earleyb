@@ -1,10 +1,22 @@
+import type {StaticImageData} from 'next/image';
+import cutTheCordImage from '@/assets/images/cut the cord.webp';
+import mainTeamMemberPhoto from '@/assets/images/mainteammberphoto3.jpg';
+import mobileRepairServiceImage from '@/assets/images/Mobile Repair Service.webp';
+import oneOnOneImage from '@/assets/images/One on One.webp';
+import ownerPhoto from '@/assets/images/ownerphoto1.jpg';
+import scamDetectionImage from '@/assets/images/scam detection.webp';
+import teamPhoto from '@/assets/images/teamphoto.jpg';
+import womanTeamMemberPhoto from '@/assets/images/womainteammemberphoto2.jpg';
+
 export type SiteImage = {
   /**
-   * Use a local path like "/images/home-hero.jpg" or a full https URL.
+   * Use an imported asset from assets/images, a local path like "/images/home-hero.jpg",
+   * or a full https URL.
    * Leave blank for image slots that should keep showing their placeholder.
-   */
-  src: string;
+  */
+  src: string | StaticImageData;
   alt: string;
+  sourceUrl?: string;
   referrerPolicy?:
     | 'no-referrer'
     | 'no-referrer-when-downgrade'
@@ -18,6 +30,17 @@ export type SiteImage = {
 
 const googleImageReferrerPolicy = 'no-referrer' as const;
 
+const pexelsPhoto = (id: number, slug: string, alt: string): SiteImage => ({
+  src: `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg`,
+  alt,
+  sourceUrl: `https://www.pexels.com/photo/${slug}-${id}/`,
+  referrerPolicy: googleImageReferrerPolicy,
+});
+
+/**
+ * Update site imagery here.
+ * All editable page, service, portfolio, home, and blog images should use this registry.
+ */
 type SiteImagesRegistry = {
   home: Record<string, SiteImage>;
   portfolio: {
@@ -35,287 +58,301 @@ type SiteImagesRegistry = {
 export const siteImages: SiteImagesRegistry = {
   home: {
     hero: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Friendly technology support session',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird Technology Solutions team members',
     },
     proactiveDefenseLeft: {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Cybersecurity training session',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: scamDetectionImage,
+      alt: 'Online payment and scam detection support',
     },
     proactiveDefenseRight: {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Secure technology support workspace',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: mobileRepairServiceImage,
+      alt: 'Mobile phone repair service in progress',
     },
     seniorLivingCard: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Tech Concierge for Senior Living',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird team ready for community tech concierge support',
     },
     businessCard: {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Small Business IT and Web Design',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        12903270,
+        'two-office-colleagues-discussing-in-front-of-computer-screen',
+        'Small business technology consulting session',
+      ),
     },
     personalTechCard: {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Personal Tech Training',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: oneOnOneImage,
+      alt: 'Older adults learning to use a tablet',
     },
     testimonialAvatar: {
-      src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_dQOYUXm-9ocUk-1cRA5ZyP6tu7OdWwNIU7SRhouWt3u89anzj3A5_pr7FGCCICOiz6a2FoSpC-bN53AYbiVQ-spgKPawBtGZtLq-9c6QyNclym7oEuOsCnQllJenEGuMkAeM3mwnTOLdgJakEE63ozCYcDA2l-C2EQnZiozAakUbDrwJG_jxTwrvV9I5p2oiVPXIDBv-rltdG9P0TX6X2OUHQcwckpskXXJEawplcI8ff_rzn1YnIDgrniF27Vjc0Lz4LKcazue9',
-      alt: 'Jane D.',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: womanTeamMemberPhoto,
+      alt: 'EarleyBird team member',
     },
   },
   portfolio: {
     seniorLiving: {
       sunriseOaks: {
-        src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-        alt: 'Sunrise Oaks Assisted Living community',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          7551644,
+          'a-man-and-a-woman-using-a-laptop-together',
+          'Tech helper assisting an older adult with a laptop',
+        ),
       },
       heritageRiverbend: {
-        src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-        alt: 'The Heritage at Riverbend community',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          27086288,
+          'an-elderly-man-sitting-at-the-table-using-a-laptop-and-a-smartphone',
+          'Senior using a laptop and smartphone for everyday technology',
+        ),
       },
       maplewoodMemoryCare: {
-        src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-        alt: 'Maplewood Memory Care community',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          6874224,
+          'a-short-haired-woman-using-a-laptop',
+          'Senior woman using a laptop at home',
+        ),
       },
     },
     business: {
       oakridgeMedicalClinic: {
-        src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-        alt: 'Modern business website project displayed on a workstation',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          7181184,
+          'laptop-on-a-wooden-table-with-the-design-business-website-on-the-screen',
+          'Modern business website project displayed on a laptop',
+        ),
       },
       pinnacleLawFirm: {
-        src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-        alt: 'Secure business technology workspace',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          7439127,
+          'photo-of-a-laptop-screen',
+          'Project management software open on a laptop screen',
+        ),
       },
       apexContracting: {
-        src: 'https://images.pexels.com/photos/10410241/pexels-photo-10410241.jpeg',
-        alt: 'Digital marketing and search visibility project visual',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          6803529,
+          'men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard',
+          'Business team planning growth strategy on a whiteboard',
+        ),
       },
       vanguardLogistical: {
-        src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-        alt: 'Workflow automation planning session',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          3183131,
+          'person-using-a-laptop',
+          'Business team collaborating with laptops and documents',
+        ),
       },
     },
   },
   pages: {
     about: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Friendly technology support conversation',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird Technology Solutions team',
     },
     whyUs: {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Proactive technology support and security planning',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: ownerPhoto,
+      alt: 'EarleyBird owner and technology concierge leader',
     },
     digitalLiteracy: {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Person learning to use everyday technology',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: oneOnOneImage,
+      alt: 'Older adults learning everyday technology on a tablet',
     },
     healthWellness: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Resident staying connected through technology',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: mainTeamMemberPhoto,
+      alt: 'EarleyBird team member ready to help with technology wellness',
     },
     techConcierge: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Senior living technology support session',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird team for tech concierge support',
     },
     coreServices: {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Technology concierge reviewing support tasks',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird team members providing core tech services',
     },
     enhancedPremium: {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Premium technology support planning',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: ownerPhoto,
+      alt: 'EarleyBird technology concierge planning premium support',
     },
     pricing: {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Facility technology planning and service sizing',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird team for assisted living and HOA packages',
     },
     scamShield: {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Cybersecurity awareness and scam prevention training',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: scamDetectionImage,
+      alt: 'Scam detection and online payment safety support',
     },
     passwordProtocol: {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Private password and account security setup',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: scamDetectionImage,
+      alt: 'Secure account and payment protection support',
     },
     contact: {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Technology support specialist ready to respond',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: womanTeamMemberPhoto,
+      alt: 'EarleyBird team member ready to respond',
     },
     book: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Consultation planning with a technology specialist',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: ownerPhoto,
+      alt: 'EarleyBird consultation specialist',
     },
     clientLogin: {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Secure client portal access',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: ownerPhoto,
+      alt: 'Secure EarleyBird client support',
     },
     faq: {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Helpful technology questions and answers',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7551644,
+        'a-man-and-a-woman-using-a-laptop-together',
+        'Helpful technology questions and answers',
+      ),
     },
     blog: {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Technology insights and security guidance',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7439127,
+        'photo-of-a-laptop-screen',
+        'Technology insights and software guidance',
+      ),
     },
     seniorPortfolio: {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'Senior living community technology partnership',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: teamPhoto,
+      alt: 'EarleyBird team for community technology partnerships',
     },
     businessPortfolio: {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Business technology project showcase',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        3183131,
+        'person-using-a-laptop',
+        'Business technology project showcase',
+      ),
     },
   },
   services: {
     default: {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'EarleyBird technology service in action',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        18304032,
+        'plants-on-shelf-above-computer-setup-on-desk-next-to-laptop-and-printer',
+        'EarleyBird technology service desk setup',
+      ),
     },
     'business-solutions': {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Small business technology strategy session',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        12903270,
+        'two-office-colleagues-discussing-in-front-of-computer-screen',
+        'Small business technology strategy session',
+      ),
     },
     'website-design': {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Professional website design workspace',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7181184,
+        'laptop-on-a-wooden-table-with-the-design-business-website-on-the-screen',
+        'Professional website design workspace',
+      ),
     },
     'seo-campaigns': {
-      src: 'https://images.pexels.com/photos/10410241/pexels-photo-10410241.jpeg',
-      alt: 'Search visibility and digital growth planning',
-      referrerPolicy: googleImageReferrerPolicy,
-    },
-    'managed-it': {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Managed IT security monitoring workspace',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        6803529,
+        'men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard',
+        'Search visibility and digital growth planning',
+      ),
     },
     'saas-consulting': {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Software workflow consulting session',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7439127,
+        'photo-of-a-laptop-screen',
+        'Software workflow consulting session',
+      ),
     },
     'personal-tech-help': {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Personal technology training and support',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        27086288,
+        'an-elderly-man-sitting-at-the-table-using-a-laptop-and-a-smartphone',
+        'Personal technology help with a laptop and smartphone',
+      ),
     },
     'home-tech-help': {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'In-home technology help and device setup',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7014414,
+        'young-woman-printing-on-modern-laser-printer',
+        'Home tech help with a printer in a home office',
+      ),
     },
     'virtual-tech-support': {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Virtual technology support session',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7682230,
+        'man-in-blue-long-sleeves-working-in-a-call-center',
+        'Virtual technology support session with headset and laptop',
+      ),
     },
     'one-on-one-training': {
-      src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-      alt: 'One-on-one device training session',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: oneOnOneImage,
+      alt: 'Older adults receiving one-on-one tablet training',
     },
     'scam-fraud-prevention': {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
-      alt: 'Scam and fraud prevention education',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: scamDetectionImage,
+      alt: 'Scam and fraud prevention payment safety support',
     },
     'smart-home-install': {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Smart home device setup and training',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        29292011,
+        'smart-home-devices-in-minimalist-setup',
+        'Smart home device setup with camera, hub, and lightbulb',
+      ),
     },
     'cut-the-cord': {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Streaming device setup and entertainment training',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: cutTheCordImage,
+      alt: 'Cut the cord cable and streaming service setup',
     },
     'streaming-setup-assistance': {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Streaming setup assistance for smart TVs and apps',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        29606737,
+        'modern-living-room-with-digital-devices-and-tv',
+        'Smart TV streaming setup with remote, tablet, and phone',
+      ),
     },
     'computer-repair': {
-      src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-      alt: 'Computer repair and troubleshooting support',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        37821110,
+        'close-up-of-laptop-repair-with-tools',
+        'Computer repair with laptop parts and tools',
+      ),
     },
     'mobile-phone-repair': {
-      src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-      alt: 'Mobile phone repair and setup support',
-      referrerPolicy: googleImageReferrerPolicy,
+      src: mobileRepairServiceImage,
+      alt: 'Mobile phone repair service',
     },
     'tech-help-repair': {
-      src: 'https://images.pexels.com/photos/29735851/pexels-photo-29735851.jpeg',
-      alt: 'Device repair and technical troubleshooting',
-      referrerPolicy: googleImageReferrerPolicy,
+      ...pexelsPhoto(
+        7639370,
+        'a-man-fixing-a-laptop',
+        'Device repair and technical troubleshooting',
+      ),
     },
   },
   blog: {
     default: {
-      src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
+      src: teamPhoto,
       alt: 'EarleyBird technology insight article',
-      referrerPolicy: googleImageReferrerPolicy,
     },
     posts: {
       'phishing-scams-targeting-seniors': {
-        src: 'https://images.pexels.com/photos/4389795/pexels-photo-4389795.jpeg',
+        src: scamDetectionImage,
         alt: 'Scam alert and phishing prevention article',
-        referrerPolicy: googleImageReferrerPolicy,
       },
       'tech-help-no-longer-optional-senior-living': {
-        src: 'https://images.pexels.com/photos/6817648/pexels-photo-6817648.jpeg',
-        alt: 'Senior living technology support article',
-        referrerPolicy: googleImageReferrerPolicy,
+        src: teamPhoto,
+        alt: 'EarleyBird team for senior living technology support article',
       },
       'why-your-website-fails-to-convert': {
-        src: 'https://images.pexels.com/photos/36407341/pexels-photo-36407341.jpeg',
-        alt: 'Small business website conversion article',
-        referrerPolicy: googleImageReferrerPolicy,
+        ...pexelsPhoto(
+          7181184,
+          'laptop-on-a-wooden-table-with-the-design-business-website-on-the-screen',
+          'Small business website conversion article',
+        ),
       },
       'beginner-guide-cut-the-cord': {
-        src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
+        src: cutTheCordImage,
         alt: 'Beginner streaming setup guide',
-        referrerPolicy: googleImageReferrerPolicy,
       },
       'smart-home-setup-should-include-training': {
-        src: 'https://images.pexels.com/photos/36968953/pexels-photo-36968953.jpeg',
-        alt: 'Smart home setup and training article',
-        referrerPolicy: googleImageReferrerPolicy,
+        src: oneOnOneImage,
+        alt: 'Smart home setup and technology training article',
       },
     },
   },

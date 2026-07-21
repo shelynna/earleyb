@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -32,7 +33,6 @@ export default function CoreServices() {
 
         <section className="pb-16 md:pb-[100px] px-4 md:px-10 max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Service 1 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">On-Site Tech Concierge</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -40,7 +40,6 @@ export default function CoreServices() {
               </p>
             </div>
 
-            {/* Service 2 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Group Training Sessions</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -48,16 +47,16 @@ export default function CoreServices() {
               </p>
             </div>
 
-            {/* Service 3 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Scam-Shield Program</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Monthly scam sweep + lobby bulletin to proactively protect your residents from fraud.
               </p>
-              <Link href="/tech-concierge/scam-shield" className="text-red-600 font-semibold text-sm hover:underline">Learn more about our mandatory Scam-Shield Program →</Link>
+              <InlineTextLink href="/tech-concierge/scam-shield" className="text-red-600 font-semibold text-sm hover:underline">
+                Learn more about our mandatory Scam-Shield Program
+              </InlineTextLink>
             </div>
 
-            {/* Service 4 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Move-In Tech Onboarding</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -65,7 +64,6 @@ export default function CoreServices() {
               </p>
             </div>
 
-            {/* Service 5 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Device Hygiene</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -73,7 +71,6 @@ export default function CoreServices() {
               </p>
             </div>
 
-            {/* Service 6 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Family Connection Setup</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -81,16 +78,16 @@ export default function CoreServices() {
               </p>
             </div>
 
-            {/* Service 7 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Telehealth Readiness</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Portal logins tested; permissions verified so residents never miss an important appointment.
               </p>
-              <Link href="/about/health-wellness" className="text-teal-600 font-semibold text-sm hover:underline">Learn why Telehealth Readiness is vital →</Link>
+              <InlineTextLink href="/about/health-wellness" className="text-teal-600 font-semibold text-sm hover:underline">
+                Learn why Telehealth Readiness is vital
+              </InlineTextLink>
             </div>
 
-            {/* Service 8 */}
             <div className="bg-white p-8 rounded-3xl flex flex-col items-start">
               <h3 className="text-xl font-bold text-black mb-3">Reporting & Accountability</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -100,13 +97,13 @@ export default function CoreServices() {
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
-             <Link href="/tech-concierge/password-protocol" className="text-gray-600 font-medium hover:text-black hover:underline transition-colors">
-               Learn about our safe Password Protocol
-             </Link>
-             <span className="hidden sm:inline text-gray-300">|</span>
-             <Link href="/tech-concierge/enhanced-premium" className="text-gray-600 font-medium hover:text-black hover:underline transition-colors">
-               Need more? See our Enhanced & Premium Services
-             </Link>
+            <InlineTextLink href="/tech-concierge/password-protocol" className="text-gray-600 font-medium hover:text-black hover:underline">
+              Learn about our safe Password Protocol
+            </InlineTextLink>
+            <span className="hidden sm:inline text-gray-300">|</span>
+            <InlineTextLink href="/tech-concierge/enhanced-premium" className="text-gray-600 font-medium hover:text-black hover:underline">
+              Need more? See our Enhanced & Premium Services
+            </InlineTextLink>
           </div>
         </section>
       </main>

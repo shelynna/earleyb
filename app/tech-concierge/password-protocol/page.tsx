@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -70,7 +71,7 @@ export default function PasswordProtocol() {
 
           <div className="text-center">
             <p className="text-gray-500 font-medium">
-               This protocol is part of our <Link href="/tech-concierge/core-services" className="text-black hover:underline transition-colors">Core Services</Link>.
+               This protocol is part of our <InlineTextLink href="/tech-concierge/core-services" className="text-black hover:underline">Core Services</InlineTextLink>.
             </p>
           </div>
 

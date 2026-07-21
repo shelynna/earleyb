@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -25,7 +26,7 @@ export default function About() {
               EarleyBird Technology Solutions is a modern technology services company dedicated to making tech simple, secure, and empowering. 
             </p>
             <p className="text-base md:text-lg text-muted px-4 leading-relaxed max-w-3xl mx-auto">
-              We help <Link href="/services/personal-tech-help" className="text-black font-semibold border-b border-black/30 hover:border-black transition-colors">individuals, families</Link>, <Link href="/services/business-solutions" className="text-black font-semibold border-b border-black/30 hover:border-black transition-colors">small businesses</Link>, and <Link href="/tech-concierge" className="text-black font-semibold border-b border-black/30 hover:border-black transition-colors">facilities</Link> bridge the gap between people and technology, delivering solutions that improve efficiency, prevent risks, and create long-term confidence in digital tools.
+              We help <InlineTextLink href="/services/personal-tech-help" className="text-black font-semibold border-b border-black/30 hover:border-black">individuals, families</InlineTextLink>, <InlineTextLink href="/services/business-solutions" className="text-black font-semibold border-b border-black/30 hover:border-black">small businesses</InlineTextLink>, and <InlineTextLink href="/tech-concierge" className="text-black font-semibold border-b border-black/30 hover:border-black">facilities</InlineTextLink> bridge the gap between people and technology, delivering solutions that improve efficiency, prevent risks, and create long-term confidence in digital tools.
             </p>
           </div>
         </section>
@@ -65,9 +66,9 @@ export default function About() {
                 <span className="inline-block text-gray-500 text-xs font-bold uppercase tracking-wider mb-6">Our Mission</span>
                 <h3 className="text-2xl md:text-3xl font-bold text-text leading-tight mb-4">
                   {"\"To make technology accessible, secure, and empowering so "}
-                  <Link href="/services/business-solutions" className="border-b-2 border-blue-400 hover:text-blue-700 transition-colors">{"businesses can grow"}</Link>
+                  <InlineTextLink href="/services/business-solutions" className="border-b-2 border-blue-400 hover:text-blue-700">{"businesses can grow"}</InlineTextLink>
                   {", "}
-                  <Link href="/tech-concierge" className="border-b-2 border-blue-400 hover:text-blue-700 transition-colors">{"seniors can feel confident"}</Link>
+                  <InlineTextLink href="/tech-concierge" className="border-b-2 border-blue-400 hover:text-blue-700">{"seniors can feel confident"}</InlineTextLink>
                   {", and communities can thrive.\""}
                 </h3>
               </div>

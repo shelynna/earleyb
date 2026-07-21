@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import {PageImageSection} from '@/components/PageImageSection';
+import {businessHours, contactInfo, socialLinks} from '@/lib/site-config';
 import {siteImages} from '@/lib/site-images';
 
 export default function Contact() {
@@ -66,7 +67,7 @@ export default function Contact() {
                     <Phone className="w-5 h-5 text-gray-500 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Phone</p>
-                      <a href="tel:7728777554" className="text-black font-semibold text-lg hover:text-blue-600 transition-colors">772-877-7554</a>
+                      <a href={contactInfo.phoneHref} className="text-black font-semibold text-lg hover:text-blue-600 transition-colors">{contactInfo.phoneDisplay}</a>
                     </div>
                   </div>
 
@@ -74,7 +75,7 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-gray-500 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Email</p>
-                      <a href="mailto:Support@ebirdtech.com" className="text-black font-semibold text-lg hover:text-indigo-600 transition-colors">Support@ebirdtech.com</a>
+                      <a href={contactInfo.emailHref} className="text-black font-semibold text-lg hover:text-indigo-600 transition-colors">{contactInfo.emailDisplay}</a>
                     </div>
                   </div>
 
@@ -82,34 +83,36 @@ export default function Contact() {
                     <MapPin className="w-5 h-5 text-gray-500 shrink-0" />
                     <div>
                       <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Google Business Profile</p>
-                      <a href="https://www.google.com/search?q=EarleyBird+Technology+Solutions" className="text-black font-semibold hover:text-purple-600 transition-colors">View EarleyBird online</a>
+                      <a href={contactInfo.googleBusinessHref} className="text-black font-semibold hover:text-purple-600 transition-colors">View EarleyBird online</a>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="p-6 bg-soft-card-2 rounded-2xl">
-                <p className="text-black font-semibold text-sm">
-                  Looking for on-site support setup times?
-                </p>
-                <p className="text-gray-600 text-xs mt-1">
-                  We schedule facility consults Monday through Friday from 8:00 AM to 6:00 PM EST.
-                </p>
+                <h2 className="text-sm font-bold text-black uppercase tracking-wider mb-4">Hours</h2>
+                <div className="space-y-2">
+                  {businessHours.map((item) => (
+                    <div key={item.day} className="flex items-center justify-between gap-4 text-sm">
+                      <span className="font-bold text-black">{item.day}</span>
+                      <span className="text-gray-600">{item.hours}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="bg-white rounded-2xl p-6">
                 <h2 className="text-sm font-bold text-black uppercase tracking-wider mb-4">Social &amp; Business Links</h2>
                 <div className="grid grid-cols-2 gap-3">
-                  <a href="https://www.linkedin.com/search/results/all/?keywords=EarleyBird%20Technology%20Solutions" className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
-                    LinkedIn
-                  </a>
-                  <a href="https://www.facebook.com/search/top?q=EarleyBird%20Technology%20Solutions" className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
-                    Facebook
-                  </a>
-                  <a href="mailto:Support@ebirdtech.com" className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
+                  {socialLinks.map((link) => (
+                    <a key={link.id} href={link.href} className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
+                      {link.label}
+                    </a>
+                  ))}
+                  <a href={contactInfo.emailHref} className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
                     Email
                   </a>
-                  <a href="tel:7728777554" className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
+                  <a href={contactInfo.phoneHref} className="bg-gray-50 hover:bg-gray-100 rounded-xl px-4 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors text-center">
                     Call
                   </a>
                 </div>

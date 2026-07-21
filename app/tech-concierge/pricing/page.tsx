@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -47,7 +48,7 @@ export default function Pricing() {
                   <li>Group Training Sessions</li>
                 </ul>
               </div>
-              <Link href="/book" className="w-full block text-center bg-gray-100 text-black font-bold rounded-full hover:bg-gray-200 transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
+              <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="w-full block text-center bg-gray-100 text-black font-bold rounded-full hover:bg-gray-200 transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
                 Book a Consultation
               </Link>
             </div>
@@ -70,7 +71,7 @@ export default function Pricing() {
                   <li>Lobby Scam Alert Board</li>
                 </ul>
               </div>
-              <Link href="/book" className="w-full block text-center bg-[#155e75] text-white font-bold rounded-full hover:bg-[#0f4f63] transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
+              <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="w-full block text-center bg-[#155e75] text-white font-bold rounded-full hover:bg-[#0f4f63] transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
                 Book a Consultation
               </Link>
             </div>
@@ -93,7 +94,7 @@ export default function Pricing() {
                   <li>Quarterly Family Seminars</li>
                 </ul>
               </div>
-              <Link href="/book" className="w-full block text-center bg-gray-100 text-black font-bold rounded-full hover:bg-gray-200 transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
+              <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="w-full block text-center bg-gray-100 text-black font-bold rounded-full hover:bg-gray-200 transition-colors py-3 text-xs uppercase tracking-widest mt-auto">
                 Book a Consultation
               </Link>
             </div>
@@ -119,13 +120,13 @@ export default function Pricing() {
           </div>
 
           <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center text-center">
-             <Link href="/tech-concierge/core-services" className="text-gray-600 font-medium hover:text-black hover:underline transition-colors">
+             <InlineTextLink href="/tech-concierge/core-services" className="text-gray-600 font-medium hover:text-black hover:underline">
                All plans include our Core Services
-             </Link>
+             </InlineTextLink>
              <span className="hidden sm:inline text-gray-300">|</span>
-             <Link href="/tech-concierge/enhanced-premium" className="text-gray-600 font-medium hover:text-black hover:underline transition-colors">
+             <InlineTextLink href="/tech-concierge/enhanced-premium" className="text-gray-600 font-medium hover:text-black hover:underline">
                Standard/Premium plans include Enhanced Services
-             </Link>
+             </InlineTextLink>
           </div>
 
         </section>

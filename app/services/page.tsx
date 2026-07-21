@@ -6,7 +6,7 @@ import {siteImages, type SiteImage} from '@/lib/site-images';
 export const metadata = {
   title: 'All Services | EarleyBird Technology Solutions',
   description:
-    'Browse all EarleyBird services, including 1-on-1 tech help, home tech help, virtual support, scam prevention, streaming setup, repair, smart home installs, and web design.',
+    'Browse EarleyBird services by category: tech concierge, tech repair, tech consulting, and small business solutions.',
 };
 
 type ServiceCard = {
@@ -18,8 +18,8 @@ type ServiceCard = {
 
 const serviceGroups: {title: string; description: string; services: ServiceCard[]}[] = [
   {
-    title: 'EarleyBird Tech Concierge',
-    description: 'Hands-on help for individuals, families, assisted living communities, and HOAs.',
+    title: 'Tech Concierge',
+    description: 'Patient, hands-on help for individuals, families, assisted living communities, and HOAs.',
     services: [
       {
         title: '1-on-1 Tech Help',
@@ -46,18 +46,6 @@ const serviceGroups: {title: string; description: string; services: ServiceCard[
         image: siteImages.services['scam-fraud-prevention'],
       },
       {
-        title: 'Cut the Cord',
-        description: 'Review cable costs, compare streaming options, and build a simpler entertainment setup.',
-        href: '/services/cut-the-cord',
-        image: siteImages.services['cut-the-cord'],
-      },
-      {
-        title: 'Streaming Setup Assistance',
-        description: 'Set up smart TVs, streaming apps, remotes, captions, favorites, and subscriptions.',
-        href: '/services/streaming-setup-assistance',
-        image: siteImages.services['streaming-setup-assistance'],
-      },
-      {
         title: 'Assisted Living and HOA Packages',
         description: 'Recurring tech help programs for communities that want residents supported on-site.',
         href: '/tech-concierge/packages',
@@ -66,15 +54,9 @@ const serviceGroups: {title: string; description: string; services: ServiceCard[
     ],
   },
   {
-    title: 'Services',
-    description: 'Repair, setup, design, and support services for households and small businesses.',
+    title: 'Tech Repair',
+    description: 'Device troubleshooting, repair guidance, cleanup, setup, and practical next steps.',
     services: [
-      {
-        title: 'Personal Tech Help',
-        description: 'The main starting point for individual and family tech support.',
-        href: '/services/personal-tech-help',
-        image: siteImages.services['personal-tech-help'],
-      },
       {
         title: 'Computer Repair',
         description: 'Troubleshooting, cleanup, updates, backup checks, and repair guidance.',
@@ -88,11 +70,47 @@ const serviceGroups: {title: string; description: string; services: ServiceCard[
         image: siteImages.services['mobile-phone-repair'],
       },
       {
+        title: 'Tech Help and Repair',
+        description: 'General troubleshooting for smart devices, repairs, and used or broken phone quotes.',
+        href: '/services/tech-help-repair',
+        image: siteImages.services['tech-help-repair'],
+      },
+    ],
+  },
+  {
+    title: 'Tech Consulting',
+    description: 'Setup and guidance for the technology choices people need help making at home.',
+    services: [
+      {
+        title: 'EarleyBird TV and Streaming Concierge',
+        description: 'Set up smart TVs, streaming apps, remotes, captions, favorites, and subscriptions.',
+        href: '/services/streaming-setup-assistance',
+        image: siteImages.services['streaming-setup-assistance'],
+      },
+      {
+        title: 'Cut the Cord',
+        description: 'Review cable costs, compare streaming options, and build a simpler entertainment setup.',
+        href: '/services/cut-the-cord',
+        image: siteImages.services['cut-the-cord'],
+      },
+      {
         title: 'Smart Home Installs',
         description: 'Install and learn cameras, doorbells, smart TVs, lights, Alexas, and more.',
         href: '/services/smart-home-install',
         image: siteImages.services['smart-home-install'],
       },
+      {
+        title: 'Personal Tech Help',
+        description: 'The main starting point for individual and family tech support.',
+        href: '/services/personal-tech-help',
+        image: siteImages.services['personal-tech-help'],
+      },
+    ],
+  },
+  {
+    title: 'Small Business Solutions',
+    description: 'Websites, SEO, and software consulting for small businesses that need practical growth support.',
+    services: [
       {
         title: 'Web Design',
         description: 'Professional websites with hosting, SEO-ready structure, and ongoing care options.',
@@ -101,7 +119,7 @@ const serviceGroups: {title: string; description: string; services: ServiceCard[
       },
       {
         title: 'Small Business Technology',
-        description: 'Web design, SEO, managed IT, and software setup for local businesses.',
+        description: 'Web design, SEO, software setup, and practical technology consulting for local businesses.',
         href: '/services/business-solutions',
         image: siteImages.services['business-solutions'],
       },
@@ -110,12 +128,6 @@ const serviceGroups: {title: string; description: string; services: ServiceCard[
         description: 'Local search, on-page SEO, content planning, and Google Business Profile support.',
         href: '/services/seo-campaigns',
         image: siteImages.services['seo-campaigns'],
-      },
-      {
-        title: 'Managed IT',
-        description: 'Proactive support for devices, users, backups, security, and daily operations.',
-        href: '/services/managed-it',
-        image: siteImages.services['managed-it'],
       },
       {
         title: 'SaaS Consulting',
@@ -139,7 +151,7 @@ export default function Services() {
             Find the exact tech help you came for.
           </h1>
           <p className="mt-6 max-w-3xl text-lg md:text-xl font-medium leading-relaxed text-gray-600">
-            Browse every EarleyBird service, then open the page that matches your need. Each page explains what we do, what is included, and the next step.
+            Browse EarleyBird services by category, then open the page that matches your need. Each page explains what we do, what is included, and the next step.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="#services" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">

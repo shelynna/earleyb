@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -72,9 +73,9 @@ export default function ClientLogin() {
 
               <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
                 <p className="text-sm text-gray-500">New to EarleyBird?</p>
-                <Link href="/book" className="text-xs font-bold uppercase tracking-wider text-black border-b border-black hover:text-blue-600 hover:border-blue-600 transition-colors">
+                <InlineTextLink href="/book" className="text-xs font-bold uppercase tracking-wider text-black border-b border-black hover:text-blue-600 hover:border-blue-600 transition-colors">
                   Create account through booking
-                </Link>
+                </InlineTextLink>
               </div>
             </div>
 

@@ -17,7 +17,7 @@ const navSections = [
       {href: '/services/virtual-tech-support', label: 'Virtual Tech Support'},
       {href: '/services/scam-fraud-prevention', label: 'Scam Detection & Prevention'},
       {href: '/services/cut-the-cord', label: 'Cut the Cord'},
-      {href: '/services/streaming-setup-assistance', label: 'Streaming Setup Assistance'},
+      {href: '/services/streaming-setup-assistance', label: 'TV & Streaming Concierge'},
       {href: '/tech-concierge/packages', label: 'Assisted Living & HOA Packages'},
       {href: '/tech-concierge/core-services', label: 'Facility Core Services'},
       {href: '/tech-concierge/pricing', label: 'Facility Pricing'},
@@ -35,7 +35,7 @@ const navSections = [
       {href: '/services/website-design', label: 'Web Design'},
       {href: '/services/business-solutions', label: 'Small Business Technology'},
       {href: '/services/seo-campaigns', label: 'SEO Campaigns'},
-      {href: '/services/managed-it', label: 'Managed IT'},
+      {href: '/services/saas-consulting', label: 'SaaS Consulting'},
     ],
   },
   {

@@ -22,7 +22,7 @@ const packages = [
     title: 'HOA and Community Packages',
     description:
       'Scheduled tech help days for neighborhoods, 55+ communities, and residential groups that want trusted support available close to home.',
-    href: '/book',
+    href: '/book?service=Assisted%20Living%20%2F%20HOA%20Package',
     icon: Home,
     details: ['On-site help days', 'Streaming setup events', 'Scam prevention workshops', 'Smart home setup guidance'],
   },
@@ -42,7 +42,7 @@ export default function Packages() {
           Recurring support for communities that want residents to have a trusted place for devices, streaming, scam questions, smart home setup, and everyday tech help.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link href="/book" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
+          <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="inline-flex h-12 items-center justify-center rounded-full bg-black px-7 text-xs font-bold uppercase tracking-widest text-white transition-colors hover:bg-black/80">
             Book a Package Consult
           </Link>
           <Link href="/tech-concierge/core-services" className="inline-flex h-12 items-center justify-center rounded-full border border-gray-300 px-7 text-xs font-bold uppercase tracking-widest text-black transition-colors hover:bg-white">

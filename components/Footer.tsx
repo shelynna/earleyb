@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {BrandLogo} from '@/components/BrandLogo';
+import {contactInfo, socialLinks} from '@/lib/site-config';
 
 const serviceLinks = [
   { href: '/services', label: 'All Services' },
@@ -30,13 +31,16 @@ export function Footer() {
               EarleyBird Technology Solutions makes tech simple, secure, and empowering for senior living facilities, small businesses, and families.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a className="rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/10 transition-colors" href="https://www.linkedin.com/search/results/all/?keywords=EarleyBird%20Technology%20Solutions">
-                LinkedIn
-              </a>
-              <a className="rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/10 transition-colors" href="https://www.facebook.com/search/top?q=EarleyBird%20Technology%20Solutions">
-                Facebook
-              </a>
-              <a className="rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/10 transition-colors" href="mailto:Support@ebirdtech.com">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.id}
+                  className="rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                  href={link.href}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a className="rounded-full px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-white/70 hover:text-white hover:bg-white/10 transition-colors" href={contactInfo.emailHref}>
                 Email
               </a>
             </div>

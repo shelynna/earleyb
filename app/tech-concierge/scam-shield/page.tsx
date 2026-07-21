@@ -19,7 +19,7 @@ export default function ScamShield() {
           <p className="text-xl md:text-2xl text-gray-600 font-medium mb-10 max-w-3xl">
             Seniors over 60 lost <strong className="text-red-600">$3.4 BILLION</strong> to internet crimes in 2023.
           </p>
-          <Link href="/book" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-4 text-xs uppercase tracking-widest shadow-md">
+          <Link href="/book?service=Scam%20Detection%20and%20Fraud%20Prevention" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-4 text-xs uppercase tracking-widest shadow-md">
             Protect Your Residents. Book a Consultation.
           </Link>
         </section>

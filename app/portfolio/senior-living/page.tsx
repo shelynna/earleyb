@@ -1,4 +1,5 @@
 import {ManagedImage} from '@/components/ManagedImage';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 import {ArrowUpRight} from 'lucide-react';
@@ -48,7 +49,7 @@ export default function SeniorLivingPortfolio() {
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mb-10">
             We are proud to partner with forward-thinking senior living communities. All imagery and content provided by client.
           </p>
-          <Link href="/book" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-md">
+          <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-md">
             Become a Partner Community
           </Link>
         </section>
@@ -88,7 +89,7 @@ export default function SeniorLivingPortfolio() {
                       <p className="text-gray-700 text-sm leading-relaxed italic">{study.result}</p>
                     </div>
                   </div>
-                  <Link href="/book" className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-action px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-action-hover hover:shadow-md">
+                  <Link href="/book?service=Assisted%20Living%20%2F%20HOA%20Package" className="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-action px-5 py-3 text-[10px] font-bold uppercase tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-action-hover hover:shadow-md">
                     Discuss this plan
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
@@ -99,7 +100,7 @@ export default function SeniorLivingPortfolio() {
 
           <div className="text-center">
             <p className="text-gray-500 font-medium">
-               Learn more about our <Link href="/tech-concierge" className="font-bold text-action underline underline-offset-4 transition-colors hover:text-action-hover">Senior Living Solutions</Link>.
+               Learn more about our <InlineTextLink href="/tech-concierge" className="font-bold text-action underline underline-offset-4 hover:text-action-hover">Senior Living Solutions</InlineTextLink>.
             </p>
           </div>
 

@@ -1,4 +1,5 @@
 import {ManagedImage} from '@/components/ManagedImage';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {siteImages} from '@/lib/site-images';
 import Link from 'next/link';
 import {
@@ -40,7 +41,7 @@ const priorityServices = [
   },
   {
     href: '/services/streaming-setup-assistance',
-    title: 'Streaming Setup',
+    title: 'TV and Streaming Concierge',
     description: 'Smart TV, streaming apps, remotes, favorites, captions, and subscription setup.',
     icon: Tv,
   },
@@ -80,7 +81,7 @@ const audienceCards = [
   {
     href: '/services/business-solutions',
     title: 'Small Businesses',
-    description: 'Web design, SEO, managed IT, software setup, and practical technology support.',
+    description: 'Web design, SEO, software setup, and practical technology consulting.',
     imageKey: 'businessCard',
   },
 ] as const;
@@ -109,7 +110,7 @@ export default function Home() {
               Tech help, repair, and protection without the runaround.
             </h1>
             <p className="mt-6 max-w-2xl text-base md:text-xl font-medium leading-relaxed text-white/80">
-              Get 1-on-1 support, home tech help, virtual support, scam prevention, streaming setup, device repair, smart home installs, web design, and community tech packages.
+              Get 1-on-1 support, home tech help, virtual support, scam prevention, TV and streaming concierge, device repair, smart home installs, web design, and community tech packages.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-xs font-bold uppercase tracking-widest text-action transition-colors hover:bg-white/90">
@@ -271,9 +272,9 @@ export default function Home() {
       <section className="py-16 md:py-[100px] px-4 md:px-10 max-w-[1440px] mx-auto">
         <div className="mb-8 flex items-end justify-between gap-6">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-text">Tech Insights</h2>
-          <Link href="/blog" className="text-xs font-bold border-b border-black text-text pb-1 hover:text-action hover:border-action transition-colors">
+          <InlineTextLink href="/blog" className="text-xs font-bold border-b border-black text-text pb-1 hover:text-action hover:border-action transition-colors">
             View Blog
-          </Link>
+          </InlineTextLink>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[

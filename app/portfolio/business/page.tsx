@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {ManagedImage} from '@/components/ManagedImage';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
-  title: "Business Solutions Portfolio | Websites, SEO, and IT Success Stories",
-  description: "Browse our portfolio of completed small business projects. From customized responsive websites and SEO marketing campaigns to managed IT networks.",
+  title: "Business Solutions Portfolio | Websites, SEO, and Consulting Success Stories",
+  description: "Browse our portfolio of completed small business projects, including responsive websites, SEO marketing campaigns, and software consulting.",
 };
 
 export default function BusinessPortfolio() {
@@ -20,7 +21,7 @@ export default function BusinessPortfolio() {
             Our Business Portfolio & Success Stories
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mb-10">
-            We deliver functional, beautiful digital products and robust IT configurations that help small businesses succeed and scale.
+            We deliver functional, beautiful digital products and practical consulting that help small businesses get found, look professional, and work smarter.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/contact" className="bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-md">
@@ -33,7 +34,7 @@ export default function BusinessPortfolio() {
           image={siteImages.pages.businessPortfolio}
           eyebrow="Business projects"
           title="Show the work with stronger visual case studies."
-          body="The portfolio now uses editable project image slots so website, SEO, IT, and SaaS examples can be updated with real client-approved visuals later."
+          body="The portfolio now uses editable project image slots so website, SEO, and SaaS examples can be updated with real client-approved visuals later."
           reverse
         />
 
@@ -60,7 +61,7 @@ export default function BusinessPortfolio() {
                 <div>
                   <h4 className="font-bold text-black text-lg mb-2">The Challenge</h4>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    The clinic’s legacy website was slow, failed to show properly on mobile devices, and did not ranks well for key health service searches in their county.
+                    The clinic&apos;s legacy website was slow, failed to show properly on mobile devices, and did not rank well for key health service searches in their county.
                   </p>
                   
                   <h4 className="font-bold text-black text-lg mb-2">Our Solution</h4>
@@ -73,14 +74,14 @@ export default function BusinessPortfolio() {
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Result</span>
                     <p className="text-green-600 font-bold text-lg">+140% Monthly Online Bookings</p>
                   </div>
-                  <Link href="/services/website-design" className="text-indigo-600 hover:text-indigo-800 transition-colors font-semibold text-xs uppercase tracking-wider">
+                  <InlineTextLink href="/services/website-design" className="text-indigo-600 hover:text-indigo-800 transition-colors font-semibold text-xs uppercase tracking-wider">
                     See Web Services
-                  </Link>
+                  </InlineTextLink>
                 </div>
               </div>
             </div>
 
-            {/* Case Study 2: Managed IT & Security */}
+            {/* Case Study 2: SaaS Consulting & Secure Workflow */}
             <div className="bg-white rounded-[32px] overflow-hidden flex flex-col group hover:bg-soft-card-2 transition-colors">
               <div className="h-64 bg-panel-bg w-full relative flex items-center justify-center overflow-hidden p-8">
                 <ManagedImage
@@ -92,29 +93,29 @@ export default function BusinessPortfolio() {
                 <div className="absolute inset-0 bg-black/35"></div>
                 <div className="text-center text-white relative z-10">
                   <h3 className="text-3xl font-black">Pinnacle Law Firm</h3>
-                  <p className="text-slate-300 mt-2 text-sm font-medium">Robust Internal Network + Cloud Disaster Recovery</p>
+                  <p className="text-slate-300 mt-2 text-sm font-medium">Secure Workflow + Software Cleanup</p>
                 </div>
               </div>
               <div className="p-8 flex-grow flex flex-col justify-between">
                 <div>
                   <h4 className="font-bold text-black text-lg mb-2">The Challenge</h4>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Experiencing recurring corporate network dropouts, insecure data sharing on unencrypted external hard drives, and constant security threats targeting key legal records.
+                    The firm was using disconnected tools, confusing file handoffs, and outdated workflows that made daily operations slower than they needed to be.
                   </p>
                   
                   <h4 className="font-bold text-black text-lg mb-2">Our Solution</h4>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Deployed high-performance cloud security firewalls, unified local networks, automated daily off-site encrypted server backups, and held standard cybersecurity seminars for all staff members.
+                    Reviewed the software stack, simplified file organization, cleaned up duplicate tools, and trained the team on a clearer day-to-day workflow.
                   </p>
                 </div>
                 <div className="pt-6 border-t border-gray-100 flex justify-between items-center">
                   <div>
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Result</span>
-                    <p className="text-green-600 font-bold text-lg">99.99% Network Uptime Achieved</p>
+                    <p className="text-green-600 font-bold text-lg">Cleaner Internal Workflow</p>
                   </div>
-                  <Link href="/services/managed-it" className="text-slate-700 hover:text-slate-900 transition-colors font-semibold text-xs uppercase tracking-wider">
-                    See IT Services
-                  </Link>
+                  <InlineTextLink href="/services/saas-consulting" className="text-slate-700 hover:text-slate-900 transition-colors font-semibold text-xs uppercase tracking-wider">
+                    See SaaS Consulting
+                  </InlineTextLink>
                 </div>
               </div>
             </div>
@@ -151,9 +152,9 @@ export default function BusinessPortfolio() {
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Result</span>
                     <p className="text-green-600 font-bold text-lg">Ranked #1 for local construction terms</p>
                   </div>
-                  <Link href="/services/seo-campaigns" className="text-teal-600 hover:text-teal-800 transition-colors font-semibold text-xs uppercase tracking-wider">
+                  <InlineTextLink href="/services/seo-campaigns" className="text-teal-600 hover:text-teal-800 transition-colors font-semibold text-xs uppercase tracking-wider">
                     See SEO Services
-                  </Link>
+                  </InlineTextLink>
                 </div>
               </div>
             </div>
@@ -190,9 +191,9 @@ export default function BusinessPortfolio() {
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Result</span>
                     <p className="text-green-600 font-bold text-lg">Reduced Admin Overhead by 35%</p>
                   </div>
-                  <Link href="/services/saas-consulting" className="text-orange-700 hover:text-orange-900 transition-colors font-semibold text-xs uppercase tracking-wider">
+                  <InlineTextLink href="/services/saas-consulting" className="text-orange-700 hover:text-orange-900 transition-colors font-semibold text-xs uppercase tracking-wider">
                     See SaaS Services
-                  </Link>
+                  </InlineTextLink>
                 </div>
               </div>
             </div>

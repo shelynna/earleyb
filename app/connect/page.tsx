@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {ArrowUpRight, Mail, Phone} from 'lucide-react';
 import {PageImageSection} from '@/components/PageImageSection';
+import {contactInfo, socialLinks} from '@/lib/site-config';
 import {siteImages} from '@/lib/site-images';
 
 export const metadata = {
@@ -10,16 +11,11 @@ export const metadata = {
 };
 
 const connectLinks = [
-  {
-    title: 'LinkedIn',
-    description: 'Follow EarleyBird for professional updates, technology guidance, and service news.',
-    href: 'https://www.linkedin.com/search/results/all/?keywords=EarleyBird%20Technology%20Solutions',
-  },
-  {
-    title: 'Facebook',
-    description: 'Connect with us for local updates, service information, and practical tech reminders.',
-    href: 'https://www.facebook.com/search/top?q=EarleyBird%20Technology%20Solutions',
-  },
+  ...socialLinks.map((link) => ({
+    title: link.label,
+    description: link.description,
+    href: link.href,
+  })),
   {
     title: 'Tech Insights',
     description: 'Read scam alerts, streaming guidance, smart home tips, and digital literacy posts.',
@@ -91,22 +87,22 @@ export default function Connect() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-          <a href="tel:7728777554" className="clickable-card group flex items-center gap-4 rounded-3xl bg-white p-7">
+          <a href={contactInfo.phoneHref} className="clickable-card group flex items-center gap-4 rounded-3xl bg-white p-7">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-soft-card text-action">
               <Phone className="h-5 w-5" />
             </span>
             <span>
               <span className="block text-sm font-bold uppercase tracking-widest text-gray-500">Call</span>
-              <span className="mt-1 block text-xl font-bold text-black">772-877-7554</span>
+              <span className="mt-1 block text-xl font-bold text-black">{contactInfo.phoneDisplay}</span>
             </span>
           </a>
-          <a href="mailto:Support@ebirdtech.com" className="clickable-card group flex items-center gap-4 rounded-3xl bg-white p-7">
+          <a href={contactInfo.emailHref} className="clickable-card group flex items-center gap-4 rounded-3xl bg-white p-7">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-soft-card text-action">
               <Mail className="h-5 w-5" />
             </span>
             <span>
               <span className="block text-sm font-bold uppercase tracking-widest text-gray-500">Email</span>
-              <span className="mt-1 block text-xl font-bold text-black">Support@ebirdtech.com</span>
+              <span className="mt-1 block text-xl font-bold text-black">{contactInfo.emailDisplay}</span>
             </span>
           </a>
         </div>

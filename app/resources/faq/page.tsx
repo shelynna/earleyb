@@ -4,6 +4,7 @@ import { useState, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
+import {InlineTextLink} from '@/components/InlineTextLink';
 import {PageImageSection} from '@/components/PageImageSection';
 import {siteImages} from '@/lib/site-images';
 
@@ -26,7 +27,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             We have a strict No Storage Policy. EarleyBird never records passwords. We use a Family-Admin Vault model, enable Autofill and Biometrics on the resident device, and support recovery through the family administrator. Learn more on our{' '}
-            <Link href="/tech-concierge/password-protocol" className="font-bold text-black underline underline-offset-4">Password Protocol</Link>.
+            <InlineTextLink href="/tech-concierge/password-protocol" className="font-bold text-black underline underline-offset-4">Password Protocol</InlineTextLink>.
           </>
         ),
       },
@@ -35,7 +36,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             Staff Micro-Training is a 10 to 15 minute training session for your staff during each on-site visit. It is included in Standard and Premium plans to improve internal capability and reduce recurring tech interruptions. See{' '}
-            <Link href="/tech-concierge/enhanced-premium" className="font-bold text-black underline underline-offset-4">Enhanced &amp; Premium Services</Link>.
+            <InlineTextLink href="/tech-concierge/enhanced-premium" className="font-bold text-black underline underline-offset-4">Enhanced &amp; Premium Services</InlineTextLink>.
           </>
         ),
       },
@@ -44,7 +45,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             Every plan includes on-site drop-in support, group training, Scam-Shield, move-in tech onboarding, device hygiene, family connection setup, telehealth readiness, and monthly accountability reporting. Review the full list on{' '}
-            <Link href="/tech-concierge/core-services" className="font-bold text-black underline underline-offset-4">Core Services</Link>.
+            <InlineTextLink href="/tech-concierge/core-services" className="font-bold text-black underline underline-offset-4">Core Services</InlineTextLink>.
           </>
         ),
       },
@@ -58,7 +59,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             We provide professional website design with hosting and ongoing care packages. This includes a brand-consistent, mobile-responsive, SEO-ready site with post-launch maintenance for updates, backups, and minor edits. Explore{' '}
-            <Link href="/services/website-design" className="font-bold text-black underline underline-offset-4">Website Design</Link>.
+            <InlineTextLink href="/services/website-design" className="font-bold text-black underline underline-offset-4">Website Design</InlineTextLink>.
           </>
         ),
       },
@@ -67,16 +68,16 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             Yes. Our SEO campaigns support on-page SEO, metadata, content strategy, local SEO, and Google Business Profile optimization. Start with{' '}
-            <Link href="/services/seo-campaigns" className="font-bold text-black underline underline-offset-4">SEO Campaigns</Link>.
+            <InlineTextLink href="/services/seo-campaigns" className="font-bold text-black underline underline-offset-4">SEO Campaigns</InlineTextLink>.
           </>
         ),
       },
       {
-        question: 'Do you provide ongoing IT support?',
+        question: 'Do you provide business technology consulting?',
         answer: (
           <>
-            Yes. Our Managed IT Services act as a proactive outsourced IT department for small businesses, covering monitoring, cybersecurity, help desk support, device management, and backups. See{' '}
-            <Link href="/services/managed-it" className="font-bold text-black underline underline-offset-4">Managed IT Services</Link>.
+            Yes. Right now we focus on website design, SEO campaigns, SaaS consulting, and practical technology guidance for small businesses. We do not offer Managed IT services at this time. Start with{' '}
+            <InlineTextLink href="/services/business-solutions" className="font-bold text-black underline underline-offset-4">Small Business Solutions</InlineTextLink>.
           </>
         ),
       },
@@ -90,7 +91,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             We make cutting the cord easy. Our team researches cost-effective streaming options based on what you watch, helps set everything up at home, and teaches you how to stream confidently. Learn about{' '}
-            <Link href="/services/cut-the-cord" className="font-bold text-black underline underline-offset-4">Cut The Cord Consulting</Link>.
+            <InlineTextLink href="/services/cut-the-cord" className="font-bold text-black underline underline-offset-4">Cut The Cord Consulting</InlineTextLink>.
           </>
         ),
       },
@@ -99,7 +100,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             We install cameras, smart doorbells, smart TVs and smart TV devices, smart lights, Alexas, and more. After every install, our technicians teach you how to use your newly installed smart device. Visit{' '}
-            <Link href="/services/smart-home-install" className="font-bold text-black underline underline-offset-4">Smart Home Installation</Link>.
+            <InlineTextLink href="/services/smart-home-install" className="font-bold text-black underline underline-offset-4">Smart Home Installation</InlineTextLink>.
           </>
         ),
       },
@@ -108,7 +109,7 @@ const faqGroups: FAQGroup[] = [
         answer: (
           <>
             Yes. We offer personalized 1-on-1 training, custom cheat sheets, and take-home guides for smartphones, email, internet safety, social media, and daily device tasks. Start with{' '}
-            <Link href="/services/one-on-one-training" className="font-bold text-black underline underline-offset-4">1-on-1 Training</Link>.
+            <InlineTextLink href="/services/one-on-one-training" className="font-bold text-black underline underline-offset-4">1-on-1 Training</InlineTextLink>.
           </>
         ),
       },

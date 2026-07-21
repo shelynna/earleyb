@@ -11,7 +11,6 @@ import {
   Home,
   Laptop,
   LineChart,
-  Shield,
   ShieldAlert,
   Smartphone,
   Tv,
@@ -45,29 +44,28 @@ interface ServiceData {
 const servicesMap: Record<string, ServiceData> = {
   'business-solutions': {
     title: 'Technology Solutions That Drive Growth',
-    metaTitle: 'Small Business Technology Solutions | Web Design, SEO, & IT',
-    metaDescription: 'Technology solutions that drive growth. We offer professional web design, SEO campaigns, and Managed IT Services (MSP) for small businesses.',
+    metaTitle: 'Small Business Technology Solutions | Web Design, SEO, & Consulting',
+    metaDescription: 'Technology solutions that drive growth. We offer professional web design, SEO campaigns, and software consulting for small businesses.',
     category: 'Business',
     description: 'We help small businesses bridge the gap between people and technology, delivering solutions that improve efficiency, prevent risks, and create long-term confidence in digital tools.',
     icon: Laptop,
     color: 'text-indigo-600 border-indigo-200',
     accentBg: 'bg-indigo-50',
     metricLabel: 'Core business services',
-    metricValue: '4',
-    body: 'EarleyBird supports small businesses with practical technology services that help owners look professional, get found online, secure daily operations, and choose software that makes work easier.',
+    metricValue: '3',
+    body: 'EarleyBird supports small businesses with practical technology services that help owners look professional, get found online, and choose software that makes work easier.',
     benefits: [
       'Professional website design with hosting and ongoing care packages.',
       'SEO campaigns that drive visibility and growth.',
-      'Managed IT services (MSP) for reliable, scalable support.',
-      'SaaS consulting and setup to streamline operations.',
+      'SaaS consulting and software setup to streamline operations.',
+      'Clear technology guidance for owners who need practical next steps.',
     ],
-    features: ['Website Design', 'SEO Campaigns', 'Managed IT', 'SaaS Setup'],
+    features: ['Website Design', 'SEO Campaigns', 'SaaS Setup', 'Tech Consulting'],
     relatedLinks: [
       { href: '/services/website-design', label: 'Professional Website Design', description: 'Build a brand-consistent, mobile-responsive, SEO-ready site.' },
       { href: '/services/seo-campaigns', label: 'SEO Campaigns', description: 'Get found on Google through content, metadata, and local search.' },
-      { href: '/services/managed-it', label: 'Managed IT Services', description: 'Get proactive support for devices, backups, security, and users.' },
       { href: '/services/saas-consulting', label: 'SaaS Consulting', description: 'Audit, select, integrate, and train your team on better tools.' },
-      { href: '/portfolio/business', label: 'Business Portfolio', description: 'Review example website, SEO, IT, and software projects.' },
+      { href: '/portfolio/business', label: 'Business Portfolio', description: 'Review example website, SEO, and software projects.' },
     ],
     primaryCta: 'Get a Free Business Consultation',
   },
@@ -123,31 +121,6 @@ const servicesMap: Record<string, ServiceData> = {
     ],
     primaryCta: 'Get an SEO Audit',
   },
-  'managed-it': {
-    title: 'Managed IT Services (MSP) for Reliable, Scalable Support',
-    metaTitle: 'Managed IT Services (MSP) | EarleyBird Solutions',
-    metaDescription: 'Get reliable, scalable IT support for your small business. Our MSP service acts as your proactive, outsourced IT department.',
-    category: 'Business',
-    description: 'Stop worrying about downtime, updates, and security risks. As your MSP, we act as your proactive, outsourced IT department so you can focus on your business.',
-    icon: Shield,
-    color: 'text-slate-700 border-slate-300',
-    accentBg: 'bg-slate-50',
-    metricLabel: 'Support model',
-    metricValue: 'Proactive',
-    body: 'Small teams need dependable systems without hiring a full internal IT department. EarleyBird helps monitor, maintain, secure, and support the technology that keeps your business moving.',
-    benefits: [
-      'Proactive monitoring and maintenance for business devices and systems.',
-      'Cybersecurity and risk prevention for daily operations.',
-      'On-call help desk and team support when staff need help.',
-      'Device and software management, data backups, and recovery planning.',
-    ],
-    features: ['Monitoring', 'Cybersecurity', 'Help Desk', 'Backups'],
-    relatedLinks: [
-      { href: '/services/saas-consulting', label: 'SaaS Consulting', description: 'We can also help manage and streamline your software stack.' },
-      { href: '/services/business-solutions', label: 'Business Solutions', description: 'Return to the small business technology pillar page.' },
-    ],
-    primaryCta: 'Get a Custom MSP Quote',
-  },
   'saas-consulting': {
     title: 'SaaS Consulting and Setup to Streamline Operations',
     metaTitle: 'SaaS Consulting & Setup | EarleyBird Solutions',
@@ -168,7 +141,7 @@ const servicesMap: Record<string, ServiceData> = {
     ],
     features: ['Audit', 'Consult', 'Implement', 'Train'],
     relatedLinks: [
-      { href: '/services/managed-it', label: 'Managed IT Services', description: 'Pair software setup with proactive IT support.' },
+      { href: '/services/website-design', label: 'Website Design', description: 'Pair software setup with a better customer-facing website.' },
       { href: '/services/business-solutions', label: 'Business Solutions', description: 'Return to the small business technology pillar page.' },
     ],
     primaryCta: 'Streamline Your Operations',
@@ -199,7 +172,7 @@ const servicesMap: Record<string, ServiceData> = {
       { href: '/services/scam-fraud-prevention', label: 'Scam & Fraud Prevention', description: 'Learn the behaviors that help detect and avoid scammers.' },
       { href: '/services/smart-home-install', label: 'Smart Home Installation', description: 'Install cameras, doorbells, smart TVs, lights, Alexas, and more.' },
       { href: '/services/cut-the-cord', label: 'Cut The Cord Consulting', description: 'Replace cable with a simpler, lower-cost streaming plan.' },
-      { href: '/services/streaming-setup-assistance', label: 'Streaming Setup Assistance', description: 'Set up streaming apps, remotes, logins, favorites, and smart TV basics.' },
+      { href: '/services/streaming-setup-assistance', label: 'EarleyBird TV and Streaming Concierge', description: 'Set up streaming apps, remotes, logins, favorites, and smart TV basics.' },
       { href: '/services/computer-repair', label: 'Computer Repair', description: 'Troubleshooting, cleanup, updates, backup checks, and practical repair guidance.' },
       { href: '/services/mobile-phone-repair', label: 'Mobile Phone Repair', description: 'Phone diagnostics, setup, transfer help, repair guidance, and device quotes.' },
     ],
@@ -359,17 +332,17 @@ const servicesMap: Record<string, ServiceData> = {
     primaryCta: 'Start Saving Now',
   },
   'streaming-setup-assistance': {
-    title: 'Streaming Setup Assistance for TVs, Apps, and Remotes',
-    metaTitle: 'Streaming Setup Assistance | Smart TV & Streaming App Help',
+    title: 'EarleyBird TV and Streaming Concierge',
+    metaTitle: 'EarleyBird TV and Streaming Concierge | Smart TV & Streaming Help',
     metaDescription: 'Set up streaming apps, smart TVs, streaming devices, remotes, favorites, logins, captions, and billing basics with patient help.',
     category: 'Personal',
-    description: 'We set up streaming so the TV feels simple again, from apps and remotes to favorite channels and account basics.',
+    description: 'We make TV and streaming feel simple again, from smart TV setup and apps to remotes, favorite channels, logins, and account basics.',
     icon: Tv,
     color: 'text-rose-600 border-rose-200',
     accentBg: 'bg-rose-50',
     metricLabel: 'Setup focus',
     metricValue: 'Simple',
-    body: 'Streaming can save money, but only when the setup is organized. EarleyBird installs and configures streaming devices, cleans up app clutter, labels the basics, and teaches customers how to find what they watch.',
+    body: 'Streaming can save money and reduce frustration, but only when the setup is organized. EarleyBird installs and configures streaming devices, cleans up app clutter, labels the basics, and teaches customers how to find what they watch.',
     benefits: [
       'Smart TV, Roku, Fire TV, Apple TV, Chromecast, and streaming app setup.',
       'Remote control walkthroughs, favorites, captions, search, and profile setup.',
@@ -382,7 +355,7 @@ const servicesMap: Record<string, ServiceData> = {
       { href: '/services/smart-home-install', label: 'Smart Home Installation', description: 'Pair streaming setup with TV or device installation.' },
       { href: '/services/personal-tech-help', label: 'Personal Tech Services', description: 'Return to the personal services pillar page.' },
     ],
-    primaryCta: 'Set Up My Streaming',
+    primaryCta: 'Book TV and Streaming Help',
   },
   'computer-repair': {
     title: 'Computer Repair, Cleanup, and Troubleshooting',
@@ -486,6 +459,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   }
 
   const serviceImage = siteImages.services[slug] ?? siteImages.services.default;
+  const bookingHref = `/book?service=${encodeURIComponent(service.title)}`;
 
   return (
     <>
@@ -504,7 +478,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-medium">
               {service.description}
             </p>
-            <Link href="/book" className="inline-flex bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-md">
+            <Link href={bookingHref} className="inline-flex bg-black text-white font-bold rounded-full hover:bg-black/80 transition-all duration-300 px-8 py-3 text-xs uppercase tracking-widest shadow-md">
               {service.primaryCta}
             </Link>
           </div>
@@ -560,7 +534,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   ))}
                 </ul>
                 <div className="flex flex-col gap-3 pt-2">
-                  <Link href="/book" className="bg-black text-white font-bold rounded-xl py-3.5 text-xs uppercase tracking-widest hover:bg-black/80 transition-colors shadow-md text-center">
+                  <Link href={bookingHref} className="bg-black text-white font-bold rounded-xl py-3.5 text-xs uppercase tracking-widest hover:bg-black/80 transition-colors shadow-md text-center">
                     {service.primaryCta}
                   </Link>
                   <Link href="/contact" className="bg-gray-100 text-black font-bold rounded-xl py-3.5 text-xs uppercase tracking-widest hover:bg-gray-200 transition-colors text-center">
